@@ -1,7 +1,3 @@
-div, span {
-  content: "";
-}
-
 h1, h2, h3, p, a {
   color: #606060;
   font-family: 'Montserrat', sans-serif;
@@ -44,7 +40,7 @@ header [class*=" frame-"] {
 header .headerwrap {
   width: 90vw;
   height: 90vh;
-  z-index: -1;
+  z-index: 1;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -86,6 +82,34 @@ header .headerwrap .flex-ham {
   top: 20px;
   width: 50px;
   height: 40px;
+}
+
+header .headerwrap .flex-ham div:nth-child(1) {
+  transition: all 300ms ease 0s;
+}
+
+header .headerwrap .flex-ham div:nth-child(2) {
+  transition: all 300ms ease 100ms;
+}
+
+header .headerwrap .flex-ham div:nth-child(3) {
+  transition: all 300ms ease 200ms;
+}
+
+header .headerwrap .flex-ham:hover div {
+  transform-origin: right;
+}
+
+header .headerwrap .flex-ham:hover div:nth-child(1) {
+  transform: scaleX(2);
+}
+
+header .headerwrap .flex-ham:hover div:nth-child(2) {
+  transform: scaleX(0.7);
+}
+
+header .headerwrap .flex-ham:hover div:nth-child(3) {
+  transform: scaleX(1.2);
 }
 
 header .headerwrap .flex-pos {
