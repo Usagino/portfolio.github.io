@@ -20,7 +20,7 @@ a{
 
 }
 header{
-  
+
   [class^="flex-"],
   [class*=" flex-"] {
     position: absolute;
@@ -52,27 +52,26 @@ header{
       width:0%;
       height: 1px;
       top: 0;
-      animation: frame_top_bottom 1s ease 0s forwards;
+      animation: width 1s ease 0s forwards;
     }
     .frame-right{
       height:0%;
       width: 1px;
       right: 0;
-      animation: frame_left_right 1s ease 0.9s forwards;
+      animation: height 1s ease 0.9s forwards;
     }
     .frame-left{
       height:0%;
       width: 1px;
       left: 0;
-      animation: frame_left_right 1s ease 0s forwards;
+      animation: height 1s ease 0s forwards;
     }
     .frame-bottom{
       width:0%;
       height: 1px;
       bottom: 0;
-      animation: frame_top_bottom 1s ease 0.9s forwards;
+      animation: width 1s ease 0.9s forwards;
     }
-
 
     .flex-ham{
       right: 20px;
@@ -201,12 +200,12 @@ main{
   }
 }
 
-@keyframes frame_top_bottom{
+@keyframes width{
   100%{
     width: 100%;
   }
 }
-@keyframes frame_left_right{
+@keyframes height{
   100%{
     height: 100%;
   }

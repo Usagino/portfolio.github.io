@@ -57,28 +57,28 @@ header .headerwrap .frame-top {
   width: 0%;
   height: 1px;
   top: 0;
-  animation: frame_top_bottom 1s ease 0s forwards;
+  animation: width 1s ease 0s forwards;
 }
 
 header .headerwrap .frame-right {
   height: 0%;
   width: 1px;
   right: 0;
-  animation: frame_left_right 1s ease 0.9s forwards;
+  animation: height 1s ease 0.9s forwards;
 }
 
 header .headerwrap .frame-left {
   height: 0%;
   width: 1px;
   left: 0;
-  animation: frame_left_right 1s ease 0s forwards;
+  animation: height 1s ease 0s forwards;
 }
 
 header .headerwrap .frame-bottom {
   width: 0%;
   height: 1px;
   bottom: 0;
-  animation: frame_top_bottom 1s ease 0.9s forwards;
+  animation: width 1s ease 0.9s forwards;
 }
 
 header .headerwrap .flex-ham {
@@ -206,13 +206,13 @@ main .content-3 .wrap-works .works {
   right: 170px;
 }
 
-@keyframes frame_top_bottom {
+@keyframes width {
   100% {
     width: 100%;
   }
 }
 
-@keyframes frame_left_right {
+@keyframes height {
   100% {
     height: 100%;
   }
