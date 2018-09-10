@@ -1,3 +1,3 @@
 $(function(){
-
+  $.scrollify({section:".contents"});
 });
