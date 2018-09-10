@@ -20,15 +20,17 @@ a{
 
 }
 header{
-  span{
-    border: solid 0.5px black;
-  }
+  
   [class^="flex-"],
   [class*=" flex-"] {
     position: absolute;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    div{
+      background: black;
+      height: 1px;
+    }
   }
   [class^="frame-"],
   [class*=" frame-"] {
@@ -84,7 +86,7 @@ header{
       margin: auto;
       width: 50px;
       height: 200px;
-      span:nth-child(1){
+      div:nth-child(1){
         width:100px;
       }
     }

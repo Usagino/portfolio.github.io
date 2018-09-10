@@ -20,16 +20,18 @@ a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
-header span {
-  border: solid 0.5px black;
-}
-
 header [class^="flex-"],
 header [class*=" flex-"] {
   position: absolute;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+}
+
+header [class^="flex-"] div,
+header [class*=" flex-"] div {
+  background: black;
+  height: 1px;
 }
 
 header [class^="frame-"],
@@ -95,7 +97,7 @@ header .headerwrap .flex-pos {
   height: 200px;
 }
 
-header .headerwrap .flex-pos span:nth-child(1) {
+header .headerwrap .flex-pos div:nth-child(1) {
   width: 100px;
 }
 
