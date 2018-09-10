@@ -1,0 +1,211 @@
+@import "_variable.scss";
+@import "_animation.scss";
+div,span{
+  content: "";
+}
+h1,h2,h3,p,a{
+  color:#606060;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
+}
+h1{
+  font-size: 50px;
+}
+a{
+  font-size: 30px;
+  display: inline;
+  padding: 10px 30px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+
+}
+header{
+  span{
+    border: solid 0.5px black;
+  }
+  [class^="flex-"],
+  [class*=" flex-"] {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  [class^="frame-"],
+  [class*=" frame-"] {
+    position: absolute;
+    background-color: black;
+    content: "";
+  }
+
+  .headerwrap{
+    width: 90vw;
+    height: 90vh;
+    z-index: -1;
+    position: fixed;
+    top: 0;bottom: 0;
+    left: 0;right: 0;
+    margin: auto;
+
+    .frame-top{
+      width:0%;
+      height: 1px;
+      top: 0;
+      animation: frame_top_bottom 1s ease 0s forwards;
+    }
+    .frame-right{
+      height:0%;
+      width: 1px;
+      right: 0;
+      animation: frame_left_right 1s ease 0.9s forwards;
+    }
+    .frame-left{
+      height:0%;
+      width: 1px;
+      left: 0;
+      animation: frame_left_right 1s ease 0s forwards;
+    }
+    .frame-bottom{
+      width:0%;
+      height: 1px;
+      bottom: 0;
+      animation: frame_top_bottom 1s ease 0.9s forwards;
+    }
+
+
+    .flex-ham{
+      right: 20px;
+      top: 20px;
+      width: 50px;
+      height: 40px;
+    }
+    .flex-pos{
+      left: -50px;
+      top: 0;bottom: 0;
+      margin: auto;
+      width: 50px;
+      height: 200px;
+      span:nth-child(1){
+        width:100px;
+      }
+    }
+  }
+}
+
+main{
+  [class^="content-"],
+  [class*=" content-"] {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  [class^="wrap-"],
+  [class*=" wrap-"] {
+    position: relative;
+    top: 0;left: 0;
+    width: 1000px;
+    height: 450px
+  }
+  .content-1{
+    .wrap-header{
+      width: 700px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1{
+        position: absolute;
+        margin: auto;
+        left: 0;
+      }
+      img{
+        position: absolute;
+        top: 0;bottom: 0;
+        margin: auto;
+        right: 0;
+        width: 300px;
+        height: auto;
+      }
+    }
+
+
+  }
+  .content-2{
+    .wrap-self{
+
+      img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 600px;height: 100%;
+        z-index: 1;
+      }
+      h1{
+        position: absolute;
+        top: 40%;
+        margin: auto;
+        display: inline-block;
+        z-index: 2;
+      }
+      a{
+        position: absolute;
+        left: 20%;
+        // right: 0px;
+        bottom: -10%;
+        margin: auto;
+        background: white;
+        display: block;
+        // width: 300px;
+        // text-align: center;
+
+        z-index: 3;
+      }
+    }
+  }
+  .content-3{
+    .wrap-works{
+      img{
+        position: absolute;
+        top: 0;left: 0;
+        height: 100%;
+        width: auto;
+      }
+      h1{
+        position: absolute;
+        right: 0;
+        padding: 40px 0;
+        z-index: 2;
+      }
+      a{
+        position: absolute;
+
+      }
+      .button_wrap{
+        position: absolute;
+        bottom: 30px;
+        right: 50px;
+      }
+      .photos{
+        bottom: 0;
+        right: 0;
+      }
+      .works{
+        bottom: 30px;
+        right:170px;
+      }
+    }
+  }
+}
+
+@keyframes frame_top_bottom{
+  100%{
+    width: 100%;
+  }
+}
+@keyframes frame_left_right{
+  100%{
+    height: 100%;
+  }
+}

@@ -1,0 +1,110 @@
+$white: #ffffff;
+$gray: #d6d6d6;
+$black: #303030;
+$twitter: #55acee;
+$instagram: #D93177;
+$youtube: #cd201f;
+$hover_color: #6e6e6e;
+$link_color: $black;
+$box_all_smartphone: 300px;
+$box_all_tablet: 600px;
+$box_all_desktop: 1000px;
+@mixin font_big {
+  font-size: 30px;
+}
+@mixin font_medium {
+  font-size: 25px;
+}
+@mixin font_small {
+  font-size: 15px;
+}
+@mixin link_color {
+  color: $link_color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: $hover_color;
+  }
+}
+
+@mixin box_all($max-width) {
+  margin: 0 auto;
+  width: 100%;
+  max-width: $max-width;
+}
+
+// cssgridLayout
+@mixin IEsupport_margin($any,$IEgap){
+  @media all and (-ms-high-contrast: none){
+    margin-#{$any}:$IEgap
+  }
+}
+
+@mixin center{
+  position: absolute;
+  top: 0;bottom: 0;
+  left: 0;right: 0;
+  margin: auto;
+}
+
+@mixin grid($columns,$rows,$gap) {
+  $columns_list:length($columns);
+  $rows_list:length($rows);
+  columns_list: $columns_list;
+  rows_list: $rows_list;
+  $contents_num:$columns_list * $rows_list;
+  $grid_num:1;
+  $column_num:1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: $columns;
+      grid-template-columns: $columns;
+  -ms-grid-rows: $rows;
+      grid-template-rows: $rows;
+  grid-gap: $gap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  @for $list from 1 through $rows_list{
+    @for $list from 1 through $columns_list{
+      &_#{$grid_num}{
+        @if $column_num == 1{
+          @include IEsupport_margin(top,0px);
+        }@else{
+          @include IEsupport_margin(top,$gap / 2);
+        }
+        @if $column_num == $rows_list{
+          @include IEsupport_margin(bottom,0px);
+        }@else{
+          @include IEsupport_margin(bottom,$gap / 2);
+        }
+        @if $list == 1{
+          @include IEsupport_margin(left,0px);
+        }@else{
+          @include IEsupport_margin(left,$gap / 2);
+        }
+        @if $list == $columns_list{
+          @include IEsupport_margin(right,0px);
+        }@else{
+          @include IEsupport_margin(right,$gap / 2);
+        }
+        -ms-grid-column:$list;
+        -ms-grid-row:$column_num;
+        $grid_num:$grid_num + 1;
+
+      }
+    }
+    $column_num:$column_num + 1;
+  }
+}
+
+$smartphone: "only screen and (min-width : 320px) and (max-width : 480px)";
+$tablet: "only screen (min-width : 480px) and (max-width : 1024px)";
