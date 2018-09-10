@@ -26,14 +26,14 @@ header [class*=" flex-"] {
 
 header [class^="flex-"] div,
 header [class*=" flex-"] div {
-  background: black;
+  background: #303030;
   height: 1px;
 }
 
 header [class^="frame-"],
 header [class*=" frame-"] {
   position: absolute;
-  background-color: black;
+  background-color: #303030;
   content: "";
 }
 
@@ -121,8 +121,9 @@ header .headerwrap .flex-pos {
   height: 200px;
 }
 
-header .headerwrap .flex-pos div:nth-child(1) {
-  width: 100px;
+header .headerwrap .flex-pos div {
+  transition: all 300ms;
+  transform-origin: left;
 }
 
 main [class^="content-"],
@@ -228,6 +229,10 @@ main .content-3 .wrap-works .photos {
 main .content-3 .wrap-works .works {
   bottom: 30px;
   right: 170px;
+}
+
+.double {
+  transform: scaleX(2);
 }
 
 @keyframes width {
