@@ -41,20 +41,38 @@ $(function(){
       }
     }
   }
+  const scroll_anime = () =>{
+    if(pos_list[1] <= pos){
+      $(`.content-2 h1`).addClass(`move_left`);
+      $(`.content-2 img`).addClass(`move_bottom`);
+      $(`.content-2 a`).addClass(`move_left`);
+    }
+    if(pos_list[2] <= pos){
+      $(`.content-3 h1`).addClass(`move_right`);
+      $(`.content-3 img`).addClass(`move_top`);
+      $(`.content-3 a`).addClass(`move_right`);
+    }
+    if(pos_list[3] <= pos){
+      $(`.content-4 .contact_section`).addClass('translateX');
+      $(`.content-4 .contact_icon`).addClass('translateX_double');
+    }
+  }
 
   pos_anime();
-
+  scroll_anime();
 
   $(window).scroll(function(event) {
+    pos =  $(window).scrollTop() + 1;
     pos_anime();
+    scroll_anime();
+
   });
 
 
   let link_array = ['twitter','instagram','wantedly'];
   for(let icon of link_array){
-    $(`.link_${icon}`).hover(function() {
+    $(`.contact_sns .link_${icon}`).hover(function() {
       $(`.contact_icon_${icon}`).css('right', '0%');
-
     }, function() {
       $(`.contact_icon_${icon}`).css('right', '100%');
     });

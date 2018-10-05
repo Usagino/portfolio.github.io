@@ -14,13 +14,14 @@ a,
 h1,
 h2,
 h3,
+li,
 p {
   color: $black;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.1em;
 }
 h1 {
-  font-size: 50px;
+  font-size: 48px;
 }
 a{
   position: relative;
@@ -35,6 +36,7 @@ header {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    z-index: 999;
 
     span {
       background: $black;
@@ -42,91 +44,33 @@ header {
     }
   }
 
-  [class^="frame-"],
-  [class*=" frame-"] {
-    position: absolute;
-    background-color: $black;
-    content: "";
-  }
-
-  .headerwrap {
-    width: 88vw;
-    height: 88vh;
-    z-index: 1;
+  .hamburger-menu{
+    transition: all 600ms ease;
     position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    right: 100%;
+    z-index: 100;
+    width: 100vw;
+    height:100vh;
+    background: rgba(#010101, 0.2);
 
-    .frame-top {
-      width: 0;
-      height: 1px;
+    content: "";
+    overflow: hidden;
+    &_nav{
+      height:100%;
+      width: 30vw;
+      background: #fafafa;
+      position: absolute;
+      right: -100%;
       top: 0;
-      animation: width 1s ease 0s forwards;
+      transition: all 700ms ease 400ms;
     }
-
-    .frame-right {
-      height: 0;
-      width: 1px;
-      right: 0;
-      animation: height 1s ease 0.9s forwards;
-    }
-
-    .frame-left {
-      height: 0;
-      width: 1px;
-      left: 0;
-      animation: height 1s ease 0s forwards;
-    }
-
-    .frame-bottom {
-      width: 0;
-      height: 1px;
-      bottom: 0;
-      animation: width 1s ease 0.9s forwards;
-    }
-
-    .flex-ham {
-      right: 16px;
-      top: 16px;
-      width: 40px;
-      height: 40px;
-
-      span:nth-child(1) {
-        transition: all 300ms ease 100ms;
-      }
-
-      span:nth-child(2) {
-        transition: all 300ms ease 0s;
-      }
-
-      span:nth-child(3) {
-        transition: all 300ms ease 200ms;
-      }
-
-      &:hover {
-        span {
-          transform-origin: right;
-        }
-
-        span:nth-child(1) {
-          transform: scaleX(1.6);
-        }
-
-        span:nth-child(2) {
-          transform: scaleX(0.8);
-        }
-
-        span:nth-child(3) {
-          transform: scaleX(1.2);
-        }
-      }
-    }
-
+  }
+  .headerwrap {
     .flex-pos {
-      left: -40px;
+      position: fixed;
+      width: 40px;
+      height: 100vh;
+      left:0;
       top: 0;
       bottom: 0;
       margin: auto;
@@ -145,53 +89,124 @@ header {
           height: 1px;
           width: 100%;
         }
-
-        &:nth-child(1):hover {
-          transform: $scale;
+        @for $i from 1 through 4{
+          &:nth-child(#{$i}):hover {
+            transform: $scale;
+          }
         }
-
-        &:nth-child(2):hover {
-          transform: $scale;
-        }
-
-        &:nth-child(3):hover {
-          transform: $scale;
-        }
-
-        &:nth-child(4):hover {
-          transform: $scale;
-        }
-
         div {
           width: 100%;
           height: 1px;
         }
       }
     }
-  }
-  .hamburger-menu{
-    transition: all 600ms ease;
-    position: fixed;
-    right: 100%;
-    z-index: 100;
-    width: 100vw;
-    height:100vh;
-    background: rgba(#010101, 0.8);
-
-    content: "";
-    overflow: hidden;
-    &_nav{
-      height:100%;
-      width: 30vw;
-      background: #fafafa;
-      position: absolute;
-      right: -100%;
-      top: 0;
-      transition: all 700ms ease 400ms;
+    .header_menu{
+      position: fixed;
+      right: 64px;
+      top: 56px;
+      ul{
+        display: flex;
+        flex-direction: row;
+      }
+      li{
+        padding: 0 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0.5;
+        transition: all 300ms ease;
+        &:hover span{
+          width: 100%;
+          padding: 0 8px;
+          background: $black;
+        }
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &_twitter{
+        span{
+          background: #1da1f2;
+        }
+      }
+      &_instagram{
+        span{
+          background: #d6249f;
+        }
+      }
+      &_wantedly{
+        span{
+          background: #21bddb;
+        }
+      }
+      span{
+        height: 1px;
+        width: 0%;
+        padding: 0 0px;
+        transition: all 300ms;
+      }
     }
+    // .header_menu{
+    //   position: fixed;
+    //   z-index: 2;
+    //   top:0;
+    //   right: -104px;
+    //   height: 100vh;
+    //   width: 160px;
+    //   ul{
+    //     padding-right: 104px;
+    //
+    //     height: 100%;
+    //     position: absolute;
+    //     display: flex;
+    //     flex-direction: column;
+    //     transition: all 500ms;
+    //     justify-content: center;
+    //     &:hover{
+    //       transform: translateX(-208px);
+    //     }
+    //     &:hover li a,&:hover li{
+    //       opacity: 1;
+    //     }
+    //   }
+    //   li{
+    //     transition: all 300ms;
+    //     opacity: 0.1;
+    //     text-align: right;
+    //     margin: 32px 0;
+    //     width: 160px;
+    //     background: $black;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     position: relative;
+    //   }
+    //   a{
+    //
+    //     font-size: 16px;
+    //     display: inline-block;
+    //     opacity: 0;
+    //     color: $white;
+    //     padding: 4px 12px;
+    //   }
+    //   @for $i from 1 through 6{
+    //     li:nth-child(#{$i}) a{
+    //       transition: all 300ms ease #{$i * 100}ms;
+    //     }
+    //   }
+    //   &_twitter:hover{
+    //     background: #1da1f2;
+    //   }
+    //   &_instagram:hover{
+    //     background: #d6249f;
+    //   }
+    //   &_wantedly:hover{
+    //     background: #21bddb;
+    //   }
+    // }
+
   }
 }
-
 [class^="content-"],
 [class*=" content-"] {
   height: 100vh;
@@ -204,9 +219,8 @@ header {
 [class^="wrap-"],
 [class*=" wrap-"] {
   position: relative;
-
-  width: 960px;
-  height: 440px;
+  width: 70%;
+  height: 60%;
 }
 
 main {
@@ -244,38 +258,37 @@ main {
 
   .content-2 {
     .wrap-self {
-      h1{
-        background:rgba(255, 255, 255, 0.9);
-      }
-      img {
-        position: absolute;
-        top: 0;
-        right: 0;
-        -o-object-fit: cover;
-        object-fit: cover;
-        width: 640px;
-        height: 100%;
-        z-index: 1;
-      }
 
-      h1 {
+      h1{
         position: absolute;
-        top: 40%;
+        top: 30%;
         margin: auto;
         display: inline-block;
         z-index: 2;
-      }
 
+        opacity: 0;
+      }
+      img {
+        position: absolute;
+        top: 0;bottom: 0;
+        right: 0;
+        margin: auto;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 60%;
+        height: 95%;
+        z-index: 1;
+        opacity: 0;
+      }
       a {
+        opacity: 0;
         position: absolute;
         left: 20%;
-        // right: 0px;
-        bottom: -10%;
+
+        bottom: 0;
         margin: auto;
         background: white;
         display: block;
-        // width: 300px;
-        // text-align: center;
         z-index: 3;
       }
     }
@@ -283,22 +296,28 @@ main {
 
   .content-3 {
     .wrap-works {
+
       img {
+        opacity: 0;
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 90%;
         width: auto;
       }
 
       h1 {
+        opacity: 0;
         position: absolute;
         right: 0;
+        top:20%;
+        text-align: right;
         padding: 40px 0;
         z-index: 2;
       }
 
       a {
+        opacity: 0;
         position: absolute;
       }
 
@@ -316,49 +335,53 @@ main {
 
       .works {
         bottom: 30px;
-        right: 170px;
+        right: 200px;
       }
     }
   }
 }
 
 footer {
+  ul{
+    height: 64%;width: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    li{
+      padding: 24px 0;
+    }
+  }
   .content-4 {
     .wrap-contact {
+
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
       width: 72vw;
       height: 72vh;
       display: grid;
       grid-template-rows:1fr ;
-      grid-template-columns: 1fr 1fr 1fr ;
+      grid-template-columns: 1fr 1fr ;
 
     }
     .contact_section{
+      transform: translateX(-100%);
       background: rgb(248, 248, 248);
       display: flex;
       align-items: center;
       justify-content: center;
-      ul{
-        height: 64%;width: 40%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        li{
-          padding: 24px 0;
-        }
-      }
-    }
 
+    }
     .contact_icon{
+      transform: translateX(-200%);
       background: rgb(240, 240, 240);
       overflow: hidden;
-
       @include center;
       position: relative;
       top: 0;left: 0;
       .contact_icon_imgwrap{
         position: absolute;
         height: 100%;width: 100%;
-
         z-index: 2;
         transition: all 500ms ease  200ms;
         @include center;
@@ -388,8 +411,6 @@ footer {
           width: auto;
         }
       }
-
-
     }
     .contact_link{
       background: rgb(232, 232, 232);
@@ -402,7 +423,151 @@ footer {
     }
   }
 }
-
 .double {
   transform: $scale;
 }
+$circle_size_1: 150%;
+.circle{
+  position: absolute;
+  right: 0; left: 0;
+  top: 0;bottom: 0;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    position: absolute;
+    opacity: 0.6;
+    animation-iteration-count:infinite;
+  }
+  $circle_size_1: 150%;
+  &_header1{
+    left: -100%;
+    height:$circle_size_1;
+    width:$circle_size_1;
+    background: #ffc9e2;
+    border-radius: 40% 40% 50% 40%/30% 50% 50%;
+    animation: rotate 8s linear 0s backwards;
+  }
+  &_header2{
+    left: -100%;
+    height:$circle_size_1;
+    width:$circle_size_1;
+    background:#ddfffd;
+    border-radius: 80% 30% 50% 50%/50%;
+    animation: minus_rotate 7s linear 0s backwards;
+  }
+  &_3{
+    left: -100%;
+    height: 90%;width:90%;
+    background: #ead6ff;
+    border-radius: 40% 60% 50% 40%/30% 50% 50%;
+    animation: rotate 8s linear 0s backwards;
+  }
+  &_4{
+    left: -100%;
+    height: 90%;width: 90%;
+    background: #e8ffed;
+    border-radius: 80% 30% 50% 30%/50%;
+    animation: minus_rotate 7s linear 0s backwards;
+  }
+  &_5{
+    right: -100%;
+    height: 100%;width: 100%;
+    background: #fcffaa;
+    border-radius: 50% 50% 50% 70%/50% 50% 70%;
+    animation: rotate 8s linear 0s backwards;
+  }
+  &_6{
+    right: -100%;
+    height: 100%;width: 100%;
+    background: #aafffc;
+    border-radius: 80% 30% 50% 50%/50%;
+    animation: minus_rotate 7s linear 0s backwards;
+  }
+}
+
+// Photos -----------------------------------
+
+.photostop_wrap{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;left: 0;
+  &_back{
+    height: 80%;width: 80%;
+  }
+}
+
+// #photos{
+//   height: 100vh;width: 100vw;
+//
+//   .photostop_wrap{
+//     height: 100%;width: 100%;
+//     display: flex;
+//     justify-content: flex-end;
+//     position: relative;
+//     top: 0;left: 0;
+//     h1{
+//       position: absolute;
+//       top: 40%;
+//       left: 10%;
+//       z-index: 3;
+//     }
+//     &_back{
+//       background: #F7F7F7;
+//       height: 85%;width: 65%;
+//       position: absolute;
+//       bottom: 0;right: 0;
+//
+//     }
+//     &_gallery{
+//       overflow: hidden;
+//       width: 90%;height: 50%;
+//       display: flex;
+//       flex-direction: row;
+//       position: absolute;
+//       top: 0;bottom: 0;right: 0;
+//       margin: auto;
+//       li{
+//         height: 100%;
+//         padding: 0 20px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//       }
+//       img{
+//         box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+//         height: 90%;width: auto;
+//       }
+//     }
+//     &_morebutton{
+//       cursor: pointer;
+//       height: 40px;width: 320px;
+//
+//       position: absolute;
+//       bottom: 40px;left: 40px;
+//       .horizontal{
+//         height: 1px;
+//         width: 300px;
+//         background: $black;
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//       }
+//       .vertical{
+//         position: absolute;
+//         bottom: 0;
+//         right: 20px;
+//         height: 1px;
+//         width: 30px;
+//         background: $black;
+//         transform-origin: right;
+//         transform: rotate(30deg);
+//       }
+//     }
+//   }
+//
+// }
