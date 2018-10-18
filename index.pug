@@ -1,0 +1,54 @@
+doctype html
+html(lang="ja")
+  head
+    include includes/_head.pug
+  
+  body
+    header
+      include includes/_header.pug
+    main
+      #index
+        .content-1.contents
+          .wrap-header.wrapper
+            .circle
+              span.circle_header1.circle_size
+              span.circle_header2.circle_size
+            h1
+              | Yuki Itoh
+              br
+              | Front-Art Graph
+            img(src="material/my_logo.svg" alt="")
+        .content-2.contents
+          .wrap-self.wrapper
+            .circle
+              span.circle_3
+              span.circle_4
+            h1
+              | Who is
+              br
+              |  Yuki Itoh?
+            img(src="material/main.png" alt="")
+            a.btn(href="")
+              span.bg
+              span.text show me more
+        .content-3.contents
+          .wrap-works.wrapper
+            .circle
+              span.circle_5
+              span.circle_6
+            h1
+              | His works 
+              br
+              | and photos
+            img(src="material/polaroid.jpg" alt="")
+            .button_wrap
+              a.btn(href="")
+                span.bg
+                span.text Photos
+              a.btn(href="")
+                span.bg
+                span.text works
+    footer
+      include includes/_footer.pug
+  
+  include includes/_script.pug
