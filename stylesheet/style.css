@@ -124,20 +124,16 @@ a,
 h1,
 h2,
 h3,
-li,
-p {
-  color: #454545;
-  font-family: 'Montserrat', sans-serif;
+p,
+li {
+  color: #ffffff;
+  color: #5c5c5c;
+  font-family: 'Lato', sans-serif;
   letter-spacing: 0.1em;
 }
 
 h1 {
   font-size: 48px;
-}
-
-a {
-  position: relative;
-  z-index: 4;
 }
 
 header [class^="flex-"],
@@ -151,7 +147,7 @@ header [class*=" flex-"] {
 
 header [class^="flex-"] span,
 header [class*=" flex-"] span {
-  background: #454545;
+  background: #5c5c5c;
   height: 1px;
 }
 
@@ -199,8 +195,9 @@ header .headerwrap .flex-pos .pos {
 }
 
 header .headerwrap .flex-pos .pos span {
-  height: 1px;
+  height: 8px;
   width: 100%;
+  opacity: 0.9;
 }
 
 header .headerwrap .flex-pos .pos:nth-child(1):hover {
@@ -240,159 +237,54 @@ header .headerwrap .header_menu li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   opacity: 0.5;
   transition: all 300ms ease;
 }
 
+header .headerwrap .header_menu li span {
+  height: 16px;
+  width: 0%;
+  padding: 1px 0px;
+  transition: all 300ms;
+  margin-top: -20px;
+  opacity: 0.9;
+  border-radius: 8px;
+}
+
 header .headerwrap .header_menu li:hover span {
   width: 100%;
-  padding: 0 8px;
-  background: #454545;
+  padding: 1px 20px;
+  background: #5c5c5c;
 }
 
-header .headerwrap .header_menu li:hover {
+header .headerwrap .header_menu li:hover a {
   opacity: 1;
+  color: #ffffff;
 }
 
-header .headerwrap .header_menu_twitter span {
-  background: #1da1f2;
+header .headerwrap .header_menu_twitter:hover span {
+  background: #55acee !important;
 }
 
-header .headerwrap .header_menu_instagram span {
-  background: #d6249f;
+header .headerwrap .header_menu_twitter:hover a {
+  color: #55acee;
 }
 
-header .headerwrap .header_menu_wantedly span {
-  background: #21bddb;
+header .headerwrap .header_menu_instagram:hover span {
+  background: #D93177 !important;
 }
 
-header .headerwrap .header_menu span {
-  height: 1px;
-  width: 0%;
-  padding: 0 0px;
-  transition: all 300ms;
+header .headerwrap .header_menu_instagram:hover a {
+  color: #D93177;
 }
 
-[class^="content-"],
-[class*=" content-"] {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header .headerwrap .header_menu_wantedly:hover span {
+  background: #21bddb !important;
 }
 
-[class^="wrap-"],
-[class*=" wrap-"] {
-  position: relative;
-  width: 70%;
-  height: 60%;
-}
-
-main a {
-  font-size: 32px;
-  display: inline;
-  padding: 8px 32px;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-}
-
-main .content-1 .wrap-header {
-  width: 800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main .content-1 .wrap-header h1 {
-  position: absolute;
-  margin: auto;
-  left: 0;
-}
-
-main .content-1 .wrap-header img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  right: 0;
-  width: 320px;
-  height: auto;
-}
-
-main .content-2 .wrap-self h1 {
-  position: absolute;
-  top: 30%;
-  margin: auto;
-  display: inline-block;
-  z-index: 2;
-  opacity: 0;
-}
-
-main .content-2 .wrap-self img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
-  width: 60%;
-  height: 95%;
-  z-index: 1;
-  opacity: 0;
-}
-
-main .content-2 .wrap-self a {
-  opacity: 0;
-  position: absolute;
-  left: 20%;
-  bottom: 0;
-  margin: auto;
-  background: white;
-  display: block;
-  z-index: 3;
-}
-
-main .content-3 .wrap-works img {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 90%;
-  width: auto;
-}
-
-main .content-3 .wrap-works h1 {
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 20%;
-  text-align: right;
-  padding: 40px 0;
-  z-index: 2;
-}
-
-main .content-3 .wrap-works a {
-  opacity: 0;
-  position: absolute;
-}
-
-main .content-3 .wrap-works .button_wrap {
-  position: absolute;
-  bottom: 30px;
-  right: 50px;
-  z-index: 3;
-}
-
-main .content-3 .wrap-works .photos {
-  bottom: 0;
-  right: 0;
-}
-
-main .content-3 .wrap-works .works {
-  bottom: 30px;
-  right: 200px;
+header .headerwrap .header_menu_wantedly:hover a {
+  color: #21bddb;
 }
 
 footer ul {
@@ -492,6 +384,117 @@ footer .content-4 .contact_link img {
   width: 16%;
 }
 
+.wrapper {
+  position: relative;
+  width: 70%;
+  height: 60%;
+}
+
+.contents {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer ul {
+  height: 64%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer ul li {
+  padding: 24px 0;
+}
+
+footer .wrap-contact {
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  width: 72vw;
+  height: 72vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+footer .contact_section {
+  transform: translateX(-100%);
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .contact_icon {
+  transform: translateX(-200%);
+  background: #f0f0f0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+footer .contact_icon .contact_icon_imgwrap {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  transition: all 500ms ease  200ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .contact_icon_twitter {
+  background: #1da1f2;
+  right: 100%;
+}
+
+footer .contact_icon_twitter img {
+  height: 16%;
+  width: auto;
+}
+
+footer .contact_icon_wantedly {
+  background: #21bddb;
+  right: 100%;
+}
+
+footer .contact_icon_wantedly img {
+  height: 10%;
+  width: auto;
+}
+
+footer .contact_icon_instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  right: 100%;
+}
+
+footer .contact_icon_instagram img {
+  height: 16%;
+  width: auto;
+}
+
+footer .contact_link {
+  background: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .contact_link img {
+  height: 16%;
+  width: 16%;
+}
+
 .double {
   transform: scaleX(2);
 }
@@ -570,15 +573,165 @@ footer .content-4 .contact_link img {
   animation: minus_rotate 7s linear 0s backwards;
 }
 
-.photostop_wrap {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  top: 0;
+main .content-1 .wrap-header {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .content-1 .wrap-header h1 {
+  position: absolute;
+  margin: auto;
   left: 0;
 }
 
-.photostop_wrap_back {
-  height: 80%;
-  width: 80%;
+main .content-1 .wrap-header img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  width: 320px;
+  height: auto;
+}
+
+main .content-2 .wrap-self .btn {
+  font-size: 16px;
+  display: inline;
+  padding: 8px 24px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  border: solid 2px #5c5c5c;
+}
+
+main .content-2 .wrap-self .btn .text {
+  position: relative;
+  transition: 200ms ease 200ms;
+}
+
+main .content-2 .wrap-self .btn .bg {
+  background-color: #5c5c5c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(110%) skewX(30deg);
+  transition: 300ms ease-in-out 200ms;
+}
+
+main .content-2 .wrap-self .btn:hover .bg {
+  transform: translateX(0%);
+}
+
+main .content-2 .wrap-self .btn:hover .text {
+  color: #ffffff;
+}
+
+main .content-2 .wrap-self h1 {
+  position: absolute;
+  top: 30%;
+  margin: auto;
+  display: inline-block;
+  z-index: 2;
+  opacity: 0;
+}
+
+main .content-2 .wrap-self img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 60%;
+  height: 95%;
+  z-index: 1;
+  opacity: 0;
+}
+
+main .content-2 .wrap-self .btn {
+  bottom: -90%;
+}
+
+main .content-3 .wrap-works .btn {
+  font-size: 16px;
+  display: inline;
+  padding: 8px 24px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  border: solid 2px #5c5c5c;
+}
+
+main .content-3 .wrap-works .btn .text {
+  position: relative;
+  transition: 200ms ease 200ms;
+}
+
+main .content-3 .wrap-works .btn .bg {
+  background-color: #5c5c5c;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(110%) skewX(30deg);
+  transition: 300ms ease-in-out 200ms;
+}
+
+main .content-3 .wrap-works .btn:hover .bg {
+  transform: translateX(0%);
+}
+
+main .content-3 .wrap-works .btn:hover .text {
+  color: #ffffff;
+}
+
+main .content-3 .wrap-works img {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90%;
+  width: auto;
+}
+
+main .content-3 .wrap-works h1 {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 20%;
+  text-align: right;
+  padding: 40px 0;
+  z-index: 2;
+}
+
+main .content-3 .wrap-works a {
+  opacity: 0;
+  position: absolute;
+}
+
+main .content-3 .wrap-works .button_wrap {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  z-index: 3;
+}
+
+main .content-3 .wrap-works .photos {
+  bottom: 0;
+  right: 0;
+}
+
+main .content-3 .wrap-works .works {
+  bottom: 30px;
+  right: 200px;
 }

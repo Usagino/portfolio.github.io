@@ -1,11 +1,13 @@
 $white: #ffffff;
 $gray: #d6d6d6;
-$black: #454545;
+$black: #5c5c5c;
 $twitter: #55acee;
 $instagram: #D93177;
 $youtube: #cd201f;
+$wantedly:#21bddb;
 $hover_color: #6e6e6e;
 $link_color: $black;
+
 $box_all_smartphone: 300px;
 $box_all_tablet: 600px;
 $box_all_desktop: 1000px;
@@ -51,6 +53,41 @@ $box_all_desktop: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@mixin btn-anime{
+  .btn{
+    font-size: 16px;
+    display: inline;
+    padding: 8px 24px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+    border: solid 2px $black;
+    .text{
+      position: relative;
+      transition: 200ms ease 200ms;
+    }
+    .bg{
+      background-color: $black;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateX(110%) skewX(30deg);
+      transition: 300ms ease-in-out 200ms;
+    }
+    &:hover {
+      .bg{
+        transform: translateX(0%);
+      }
+      .text{
+        color: $white;
+      }
+    }
+  }
 }
 
 

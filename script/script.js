@@ -1,6 +1,18 @@
 $(function(){
 
+
   //画面高さ取得
+  // スクロールできる要素の数を取得し、バーを描画
+  let bar_length = Math.max.apply( null, [document.body.clientHeight , document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight] );
+  let window_height = document.documentElement.clientHeight;
+  let floor_length = bar_length / window_height
+  console.log(`このサイトは${bar_length}`);
+  console.log(`${floor_length}階建てです`);
+  for(let i= 0; i < floor_length;i++){
+    $(`.flex-pos`).append('<div class="pos"><span></span></div>');
+  }
+
+
 
   let half = $(window).height() / 2;
 
@@ -30,14 +42,14 @@ $(function(){
       console.log(`Hello-${i}`);
     }
   }
+
   const pos_anime = () =>{
     pos =  $(window).scrollTop() + 1;
     for (let i = 0; i <= flex_length; i++) {
       if(pos_list[i] <= pos && !(pos_list[ i+1 ] <= pos)){
-        console.log(`今は${i+1}階`);
-        $(`.flex-pos div:nth-child(${i+1})`).addClass('double');
+        $(`.flex-pos div:nth-child(${i+1})`).addClass('double').css('opacity', 1);
       }else {
-        $(`.flex-pos div:nth-child(${i+1})`).removeClass('double');
+        $(`.flex-pos div:nth-child(${i+1})`).removeClass('double').css('opacity', 0.1);
       }
     }
   }
@@ -52,10 +64,7 @@ $(function(){
       $(`.content-3 img`).addClass(`move_top`);
       $(`.content-3 a`).addClass(`move_right`);
     }
-    if(pos_list[3] <= pos){
-      $(`.content-4 .contact_section`).addClass('translateX');
-      $(`.content-4 .contact_icon`).addClass('translateX_double');
-    }
+
   }
 
   pos_anime();
@@ -65,9 +74,7 @@ $(function(){
     pos =  $(window).scrollTop() + 1;
     pos_anime();
     scroll_anime();
-
   });
-
 
   let link_array = ['twitter','instagram','wantedly'];
   for(let icon of link_array){
@@ -77,5 +84,20 @@ $(function(){
       $(`.contact_icon_${icon}`).css('right', '100%');
     });
   }
+
+  // 下から数えて何pxかを算出し、footerを表示する
+  let h = $(window).height();
+  $(window).scroll(function() {
+    let bottom_pos = bar_length - pos - h + 1;
+
+    if(bottom_pos <= h/2){
+      $(`.footer-wrap .contact_section`).addClass('translateX');
+      $(`.footer-wrap .contact_icon`).addClass('translateX_double');
+    }
+  })
+
+
+
+
 
 });
