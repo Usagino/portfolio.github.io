@@ -95,9 +95,6 @@ $(function(){
       $(`.footer-wrap .contact_icon`).addClass('translateX_double');
     }
   })
-
-
-
-
-
 });
+
+console.log("1413");
