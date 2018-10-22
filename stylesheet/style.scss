@@ -1,5 +1,7 @@
 @import "_variable.scss";
 @import "_animation.scss";
+
+
 $scale: scaleX(2);
 
 div,
@@ -127,6 +129,7 @@ header {
           width: 100%;
           padding: 1px 20px;
           background: $black;
+          z-index: -1;
         }
         &:hover a{
           opacity: 1;
@@ -146,7 +149,7 @@ header {
             background: $sns_color !important;
           }
           &:hover a{
-            color: $sns_color;
+            color: $white;
           }
         }
       }
@@ -252,87 +255,7 @@ footer {
 }
 
 
-footer {
-  ul{
-    height: 64%;width: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    li{
-      padding: 24px 0;
-    }
-  }
-  .wrap-contact {
 
-    position: absolute;
-    z-index: 1;
-    overflow: hidden;
-    width: 72vw;
-    height: 72vh;
-    display: grid;
-    grid-template-rows:1fr ;
-    grid-template-columns: 1fr 1fr ;
-
-  }
-  .contact_section{
-    transform: translateX(-100%);
-    background: rgb(248, 248, 248);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
-  .contact_icon{
-    transform: translateX(-200%);
-    background: rgb(240, 240, 240);
-    overflow: hidden;
-    @include center;
-    position: relative;
-    top: 0;left: 0;
-    .contact_icon_imgwrap{
-      position: absolute;
-      height: 100%;width: 100%;
-      z-index: 2;
-      transition: all 500ms ease  200ms;
-      @include center;
-    }
-    &_twitter{
-      background: #1da1f2;
-      right: 100%;
-      img{
-        height: 16%;
-        width: auto;
-      }
-    }
-    &_wantedly{
-      background: #21bddb;
-      right: 100%;
-      img{
-        height: 10%;
-        width: auto;
-      }
-    }
-    &_instagram{
-      background: #d6249f;
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-      right: 100%;
-      img{
-        height: 16%;
-        width: auto;
-      }
-    }
-  }
-  .contact_link{
-    background: rgb(232, 232, 232);
-
-    @include center;
-    img{
-      height: 16%;
-      width: 16%;
-    }
-  }
-
-}
 .double {
   transform: $scale;
 }
@@ -400,6 +323,9 @@ $circle_size_1: 150%;
 }
 // index -----------------------------------
 main {
+  .circle-responsive{
+    display: none;
+  }
   .content-1 {
     .wrap-header {
       width: 800px;
@@ -449,13 +375,13 @@ main {
       }
       .btn{
         bottom: -90%;
+
       }
     }
   }
 
   .content-3 {
     .wrap-works {
-
       @include btn-anime;
       img {
         opacity: 0;
@@ -482,6 +408,9 @@ main {
       }
 
       .button_wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
         position: absolute;
         bottom: 30px;
         right: 50px;
@@ -501,3 +430,7 @@ main {
   }
 }
 // Photos -----------------------------------
+
+
+
+@import "_responsive.scss";
