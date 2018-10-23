@@ -4,8 +4,28 @@
   }
   header{
     .headerwrap{
+      .flex-pos{
+        display: none;
+      }
       .desktop{
         display: none;
+      }
+      .hamburger{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        position: fixed;
+        height: 30px;width: 30px;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        margin: auto;
+
+        span{
+          height: 1px;
+          width: 100%;
+          background: $black;
+        }
       }
       .phone{
         transform: translateY(100%);

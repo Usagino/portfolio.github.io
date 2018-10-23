@@ -265,7 +265,7 @@ header .headerwrap .flex-pos {
       width: 100%;
       height: 1px; }
 
-header .headerwrap .phone {
+header .headerwrap .phone, header .headerwrap .hamburger {
   display: none; }
 
 header .headerwrap .header_menu {
@@ -611,11 +611,28 @@ main .content-3 .wrap-works .works {
   bottom: 30px;
   right: 200px; }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 420px) {
   .circle {
+    display: none; }
+  header .headerwrap .flex-pos {
     display: none; }
   header .headerwrap .desktop {
     display: none; }
+  header .headerwrap .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto; }
+    header .headerwrap .hamburger span {
+      height: 1px;
+      width: 100%;
+      background: #5c5c5c; }
   header .headerwrap .phone {
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
