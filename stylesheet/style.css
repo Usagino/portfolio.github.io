@@ -205,8 +205,8 @@
     -webkit-transform: scaleX(1);
             transform: scaleX(1); }
   50% {
-    -webkit-transform: scaleX(0.5) rotate(-2deg);
-            transform: scaleX(0.5) rotate(-2deg); }
+    -webkit-transform: scaleX(0.5) rotate(-10deg);
+            transform: scaleX(0.5) rotate(-10deg); }
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }
@@ -216,8 +216,8 @@
     -webkit-transform: scaleX(1);
             transform: scaleX(1); }
   50% {
-    -webkit-transform: scaleX(0.5) rotate(-2deg);
-            transform: scaleX(0.5) rotate(-2deg); }
+    -webkit-transform: scaleX(0.5) rotate(-10deg);
+            transform: scaleX(0.5) rotate(-10deg); }
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }
