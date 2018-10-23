@@ -1,7 +1,9 @@
 @import "_variable.scss";
 @import "_animation.scss";
 
-
+html{
+  overflow-x: hidden;
+}
 $scale: scaleX(2);
 
 div,
@@ -100,7 +102,11 @@ header {
         }
       }
     }
+    .phone{
+      display: none;
+    }
     .header_menu{
+
       position: fixed;
       right: 64px;
       top: 56px;

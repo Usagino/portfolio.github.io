@@ -1,27 +1,32 @@
-
+mixin menu
+  ul
+    li
+      a(href="#") About
+      span
+    li
+      a(href="#") Works
+      span
+    li
+      a(href="#") Photos
+      span
+    li.header_menu_twitter
+      a(href="#") Twitter
+      span
+    li.header_menu_instagram
+      a(href="#") Instagram
+      span
+    li.header_menu_wantedly
+      a(href="#") Wantedly
+      span
+        
 .headerwrap
   .flex-pos
     // js add bar
-  nav.header_menu
-    ul
-      li
-        a(href="#") About
-        span
-      li
-        a(href="#") Works
-        span
-      li
-        a(href="#") Photos
-        span
-      li.header_menu_twitter
-        a(href="#") Twitter
-        span
-      li.header_menu_instagram
-        a(href="#") Instagram
-        span
-      li.header_menu_wantedly
-        a(href="#") Wantedly
-        span
+
+  nav.header_menu.desktop
+    +menu
+  nav.header_menu.phone
+    +menu
 //
   <div class="hamburger-menu">
   <div class="hamburger-menu_nav">

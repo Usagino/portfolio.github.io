@@ -4,6 +4,34 @@
   }
   header{
     .headerwrap{
+      .desktop{
+        display: none;
+      }
+      .phone{
+        transform: translateY(100%);
+        display: block;
+        top: 0;
+        right: 0;
+        background: $black;
+        opacity: 0.6;
+        z-index: 20;
+        ul{
+          flex-direction: column;
+          justify-content: center;
+          height: 100vh;
+          width: 100vw;
+          li{
+            opacity: 1;
+            a{
+              padding: 20px;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .headerwrap{
       .flex-pos{
         width: 10px;
       }
@@ -11,13 +39,14 @@
   }
   main{
     .circle-responsive{
-      display: block;
+      z-index: -1;
       position: fixed;
       right: 0; left: 0;
       top: 0;bottom: 0;
       margin: auto;
-      width: 300px;
-      height: 300px;
+      width: 100vw;
+      height: 100vh;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,6 +67,7 @@
         height: 160px;
         width:160px;
         opacity: 1;
+
         border-radius: 80% 30% 50% 30%/50%;
         background: $white;
         animation: minus_rotate 7s linear 0s backwards;
