@@ -97,10 +97,29 @@ $(function(){
   })
 
   // hamburger-menu
+  let hamburger_list = ["phone","hamburger-top","hamburger-middle","hamburger-bottom"];
+  let ham_count = 0;
+  console.log(ham_count);
+
   $(`.hamburger`).on('click',function(){
-     $(`.phone`).css('transform','translateX(0%)');
-     $(this).css('opacity',0);
-     console.log("押された");
+
+    if(ham_count == 0){
+      $(`.hamburger span`).css('background','white');
+      hamburger_list.forEach(function(value){
+        $(`.${value}`).addClass(`${value}-after`);
+      });
+      ham_count += 1;
+      console.log(ham_count);
+    }else{
+      $(`.hamburger span`).css('background','black');
+      hamburger_list.forEach(function(value){
+        $(`.${value}`).removeClass(`${value}-after`);
+      });
+      ham_count -= 1;
+      console.log(ham_count);
+    }
+
+
   });
 
 });

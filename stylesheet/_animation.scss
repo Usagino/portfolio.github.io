@@ -111,3 +111,7 @@ $move:30px;
     transform: rotate(-360deg);
   }
 }
+.phone-after{transform:translateX(0%) !important}
+.hamburger-top-after{transform: rotate(45deg);}
+.hamburger-middle-after{transform: translateX(100vw);}
+.hamburger-bottom-after{transform: rotate(-45deg);}

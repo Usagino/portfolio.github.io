@@ -172,6 +172,22 @@
     -webkit-transform: rotate(-360deg);
             transform: rotate(-360deg); } }
 
+.phone-after {
+  -webkit-transform: translateX(0%) !important;
+          transform: translateX(0%) !important; }
+
+.hamburger-top-after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.hamburger-middle-after {
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw); }
+
+.hamburger-bottom-after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+
 html {
   overflow-x: hidden; }
 
@@ -619,7 +635,7 @@ main .content-3 .wrap-works .works {
   header .headerwrap .desktop {
     display: none; }
   header .headerwrap .hamburger {
-    z-index: 10;
+    z-index: 30;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -634,7 +650,11 @@ main .content-3 .wrap-works .works {
     header .headerwrap .hamburger span {
       height: 1px;
       width: 100%;
-      background: #5c5c5c; }
+      background: #5c5c5c;
+      transition: all 500ms ease 0s; }
+    header .headerwrap .hamburger-top, header .headerwrap .hamburger-bottom {
+      -webkit-transform-origin: left;
+              transform-origin: left; }
   header .headerwrap .phone {
     transition: all 300ms ease 0s;
     -webkit-transform: translateX(-100%);
