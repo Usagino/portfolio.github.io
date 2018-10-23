@@ -795,6 +795,9 @@ main .content-3 .wrap-works .works {
       align-items: center;
       position: static;
       z-index: 10; }
+  main .content-3 .wrapper {
+    width: 100%;
+    height: 72%; }
   main .content-3 img {
     display: none; }
   main .content-3 .wrap-works {
@@ -812,7 +815,7 @@ main .content-3 .wrap-works .works {
     main .content-3 .wrap-works h1 {
       text-align: left; }
     main .content-3 .wrap-works .button_wrap {
-      width: 90%;
+      width: 70%;
       display: flex;
       flex-direction: row; }
       main .content-3 .wrap-works .button_wrap .btn {
