@@ -103,7 +103,7 @@ header {
       }
     }
     .phone,.hamburger{
-      
+
       display: none;
     }
     .header_menu{
@@ -358,6 +358,12 @@ main {
     }
   }
   .content-2 {
+    .main-sp{
+      display: none;
+    }
+    .main-pc{
+      display: block;
+    }
     .wrap-self {
       @include btn-anime;
       h1{

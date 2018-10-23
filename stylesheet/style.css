@@ -541,6 +541,12 @@ main .content-1 .wrap-header {
     width: 320px;
     height: auto; }
 
+main .content-2 .main-sp {
+  display: none; }
+
+main .content-2 .main-pc {
+  display: block; }
+
 main .content-2 .wrap-self .btn {
   font-size: 16px;
   display: inline;
@@ -751,8 +757,8 @@ main .content-3 .wrap-works .works {
   main .bg {
     display: none; }
   main .wrapper {
-    width: 80%;
-    height: 72%; }
+    width: 72%;
+    height: 64%; }
   main .content-1 .wrap-header h1 {
     display: none;
     font-size: 24px;
@@ -761,14 +767,20 @@ main .content-3 .wrap-works .works {
     width: 240px;
     left: 0;
     bottom: 40px; }
+  main .content-2 .main-pc {
+    display: none; }
+  main .content-2 .main-sp {
+    display: block; }
   main .content-2 .wrap-self h1 {
-    top: auto;
-    left: inherit;
+    top: inherit;
+    right: inherit;
     left: 0;
-    bottom: 10%; }
+    bottom: 20%; }
   main .content-2 .wrap-self img {
-    width: 100%;
-    height: 100%; }
+    bottom: inherit;
+    width: 90%;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
   main .content-2 .wrap-self .btn {
     position: absolute;
     z-index: 10;
