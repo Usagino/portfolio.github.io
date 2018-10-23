@@ -150,7 +150,7 @@ $(function() {
 
     }
   });
-  
+
   $(`.hamburger-top`).addClass('hamburger-top-anime');
   $(`.hamburger-middle`).addClass('hamburger-middle-anime');
   $(`.hamburger-bottom`).addClass('hamburger-bottom-anime');
@@ -159,6 +159,6 @@ $(function() {
     $(`.hamburger-top`).removeClass('hamburger-top-anime');
     $(`.hamburger-middle`).removeClass('hamburger-middle-anime');
     $(`.hamburger-bottom`).removeClass('hamburger-bottom-anime');
-  }, 1300);
+  }, 1400);
 
 });

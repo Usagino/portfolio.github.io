@@ -189,41 +189,35 @@
           transform: rotate(-45deg); }
 
 .hamburger-top-anime {
-  -webkit-animation: hamburger-bar 1000ms ease 100ms forwards;
-          animation: hamburger-bar 1000ms ease 100ms forwards; }
+  -webkit-animation: hamburger-bar 700ms ease 100ms forwards;
+          animation: hamburger-bar 700ms ease 100ms forwards; }
 
 .hamburger-middle-anime {
-  -webkit-animation: hamburger-bar 1000ms ease 200ms forwards;
-          animation: hamburger-bar 1000ms ease 200ms forwards; }
+  -webkit-animation: hamburger-bar 700ms ease 300ms forwards;
+          animation: hamburger-bar 700ms ease 300ms forwards; }
 
 .hamburger-bottom-anime {
-  -webkit-animation: hamburger-bar 1000ms ease 300ms forwards;
-          animation: hamburger-bar 1000ms ease 300ms forwards; }
+  -webkit-animation: hamburger-bar 700ms ease 600ms forwards;
+          animation: hamburger-bar 700ms ease 600ms forwards; }
 
 @-webkit-keyframes hamburger-bar {
   0% {
-    -webkit-transform: scaleX(1.2);
-            transform: scaleX(1.2); }
-  30% {
-    -webkit-transform: scaleX(0.7);
-            transform: scaleX(0.7); }
-  60% {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5); }
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
+  50% {
+    -webkit-transform: scaleX(0.5) rotate(-2deg);
+            transform: scaleX(0.5) rotate(-2deg); }
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }
 
 @keyframes hamburger-bar {
   0% {
-    -webkit-transform: scaleX(1.2);
-            transform: scaleX(1.2); }
-  30% {
-    -webkit-transform: scaleX(0.7);
-            transform: scaleX(0.7); }
-  60% {
-    -webkit-transform: scaleX(0.5);
-            transform: scaleX(0.5); }
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1); }
+  50% {
+    -webkit-transform: scaleX(0.5) rotate(-2deg);
+            transform: scaleX(0.5) rotate(-2deg); }
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }

@@ -117,27 +117,17 @@ $move:30px;
 .hamburger-bottom-after{transform: rotate(-45deg);}
 
 .hamburger-top-anime{
-  animation: hamburger-bar 1000ms ease 100ms forwards;
+  animation: hamburger-bar 700ms ease 100ms forwards;
 }
 .hamburger-middle-anime{
-  animation: hamburger-bar 1000ms ease 200ms forwards;
+  animation: hamburger-bar 700ms ease 300ms forwards;
 }
 .hamburger-bottom-anime{
-  animation: hamburger-bar 1000ms ease 300ms forwards;
+  animation: hamburger-bar 700ms ease 600ms forwards;
 }
 
 @keyframes hamburger-bar{
-  0%{
-    transform: scaleX(1.2);
-  }
-
-  30%{
-    transform: scaleX(0.7);
-  }
-  60%{
-    transform: scaleX(0.5);
-  }
-  100%{
-    transform: scaleX(1);
-  }
+  0%{transform: scaleX(1);}
+  50%{transform: scaleX(0.5) rotate(-2deg);}
+  100%{transform: scaleX(1);}
 }
