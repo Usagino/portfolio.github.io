@@ -662,6 +662,8 @@ main .content-3 .wrap-works .works {
   right: 200px; }
 
 @media screen and (max-width: 420px) {
+  h1 {
+    font-size: 32px; }
   .circle {
     display: none; }
   header .headerwrap .flex-pos {
@@ -746,6 +748,11 @@ main .content-3 .wrap-works .works {
               animation: minus_rotate 7s linear 0s backwards;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite; }
+  main .bg {
+    display: none; }
+  main .wrapper {
+    width: 80%;
+    height: 72%; }
   main .content-1 .wrap-header h1 {
     display: none;
     font-size: 24px;
@@ -753,4 +760,17 @@ main .content-3 .wrap-works .works {
   main .content-1 .wrap-header img {
     width: 240px;
     left: 0;
-    bottom: 40px; } }
+    bottom: 40px; }
+  main .content-2 .wrap-self h1 {
+    top: auto;
+    left: inherit;
+    left: 0;
+    bottom: 10%; }
+  main .content-2 .wrap-self img {
+    width: 100%;
+    height: 100%; }
+  main .content-2 .wrap-self .btn {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: 0; } }

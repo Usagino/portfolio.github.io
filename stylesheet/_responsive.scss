@@ -1,4 +1,7 @@
 @media screen and (max-width:$box_all_smartphone){
+  h1{
+    font-size: 32px;
+  }
   .circle{
     display: none;
   }
@@ -30,7 +33,7 @@
           transition: all 500ms ease 0s;
           transform-origin: left;
         }
-      
+
       }
       .phone{
               transition: all 300ms ease 0s;
@@ -100,6 +103,13 @@
         animation-iteration-count:infinite;
       }
     }
+    .bg{
+      display: none;
+    }
+    .wrapper{
+      width: 80%;
+      height: 72%;
+    }
     .content-1{
       .wrap-header {
         h1{
@@ -114,6 +124,26 @@
           width: 240px;
           left: 0;
           bottom: 40px;
+        }
+      }
+    }
+    .content-2{
+      .wrap-self{
+        h1{
+          top: auto;
+          left: inherit;
+          left: 0;
+          bottom: 10%;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+        }
+        .btn{
+          position: absolute;
+          z-index: 10;
+          right: 0;
+          bottom:0;
         }
       }
     }
