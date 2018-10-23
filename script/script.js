@@ -1,24 +1,51 @@
-$(function(){
+$(function() {
+  function no_scroll() {
+    console.log("no_scroll");
+    //PC用
+    var scroll_event = 'onwheel' in document
+      ? 'wheel'
+      : 'onmousewheel' in document
+        ? 'mousewheel'
+        : 'DOMMouseScroll';
+    $(document).on(scroll_event, function(e) {
+      e.preventDefault();
+    });
+    //SP用
+    $(document).on('touchmove.noScroll', function(e) {
+      e.preventDefault();
+    });
+  }
 
+  //スクロール復活用関数
+  function return_scroll() {
+    console.log("return_scroll");
+    //PC用
+    var scroll_event = 'onwheel' in document
+      ? 'wheel'
+      : 'onmousewheel' in document
+        ? 'mousewheel'
+        : 'DOMMouseScroll';
+    $(document).off(scroll_event);
+    //SP用
+    $(document).off('.noScroll');
+  }
 
   //画面高さ取得
   // スクロールできる要素の数を取得し、バーを描画
-  let bar_length = Math.max.apply( null, [document.body.clientHeight , document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight] );
+  let bar_length = Math.max.apply(null, [document.body.clientHeight, document.body.scrollHeight, document.documentElement.scrollHeight, document.documentElement.clientHeight]);
   let window_height = document.documentElement.clientHeight;
   let floor_length = bar_length / window_height
   console.log(`このサイトは${bar_length}`);
   console.log(`${floor_length}階建てです`);
-  for(let i= 0; i < floor_length;i++){
+  for (let i = 0; i < floor_length; i++) {
     $(`.flex-pos`).append('<div class="pos"><span></span></div>');
   }
-
-
 
   let half = $(window).height() / 2;
 
   let flex_length = $(".flex-pos div").length
 
-  $.scrollify({section:".contents"});
+  $.scrollify({section: ".contents"});
 
   $(`.flex-ham`).click(function(event) {
     $(`.hamburger-menu`).css('right', '0%');
@@ -29,7 +56,9 @@ $(function(){
     $(`.hamburger-menu_nav`).css('right', '');
   });
 
-  let pos_list = [],content_pos,pos;
+  let pos_list = [],
+    content_pos,
+    pos;
 
   for (let i = 1; i <= flex_length; i++) {
     content_pos = $(`.content-${i}`).offset().top;
@@ -38,28 +67,28 @@ $(function(){
   }
 
   for (let i = 1; i <= flex_length; i++) {
-    if(pos_list[i] >= pos){
+    if (pos_list[i] >= pos) {
       console.log(`Hello-${i}`);
     }
   }
 
-  const pos_anime = () =>{
-    pos =  $(window).scrollTop() + 1;
+  const pos_anime = () => {
+    pos = $(window).scrollTop() + 1;
     for (let i = 0; i <= flex_length; i++) {
-      if(pos_list[i] <= pos && !(pos_list[ i+1 ] <= pos)){
-        $(`.flex-pos div:nth-child(${i+1})`).addClass('double').css('opacity', 1);
-      }else {
-        $(`.flex-pos div:nth-child(${i+1})`).removeClass('double').css('opacity', 0.1);
+      if (pos_list[i] <= pos && !(pos_list[i + 1] <= pos)) {
+        $(`.flex-pos div:nth-child(${i + 1})`).addClass('double').css('opacity', 1);
+      } else {
+        $(`.flex-pos div:nth-child(${i + 1})`).removeClass('double').css('opacity', 0.1);
       }
     }
   }
-  const scroll_anime = () =>{
-    if(pos_list[1] <= pos){
+  const scroll_anime = () => {
+    if (pos_list[1] <= pos) {
       $(`.content-2 h1`).addClass(`move_left`);
       $(`.content-2 img`).addClass(`move_bottom`);
       $(`.content-2 a`).addClass(`move_left`);
     }
-    if(pos_list[2] <= pos){
+    if (pos_list[2] <= pos) {
       $(`.content-3 h1`).addClass(`move_right`);
       $(`.content-3 img`).addClass(`move_top`);
       $(`.content-3 a`).addClass(`move_right`);
@@ -71,13 +100,13 @@ $(function(){
   scroll_anime();
 
   $(window).scroll(function(event) {
-    pos =  $(window).scrollTop() + 1;
+    pos = $(window).scrollTop() + 1;
     pos_anime();
     scroll_anime();
   });
 
-  let link_array = ['twitter','instagram','wantedly'];
-  for(let icon of link_array){
+  let link_array = ['twitter', 'instagram', 'wantedly'];
+  for (let icon of link_array) {
     $(`.contact_sns .link_${icon}`).hover(function() {
       $(`.contact_icon_${icon}`).css('right', '0%');
     }, function() {
@@ -90,36 +119,46 @@ $(function(){
   $(window).scroll(function() {
     let bottom_pos = bar_length - pos - h + 1;
 
-    if(bottom_pos <= h/2){
+    if (bottom_pos <= h / 2) {
       $(`.footer-wrap .contact_section`).addClass('translateX');
       $(`.footer-wrap .contact_icon`).addClass('translateX_double');
     }
   })
 
-  // hamburger-menu
-  let hamburger_list = ["phone","hamburger-top","hamburger-middle","hamburger-bottom"];
+  // hamburger-menuのインタラクション
+  let hamburger_list = ["phone", "hamburger-top", "hamburger-middle", "hamburger-bottom"];
   let ham_count = 0;
   console.log(ham_count);
 
-  $(`.hamburger`).on('click',function(){
-
-    if(ham_count == 0){
-      $(`.hamburger span`).css('background','white');
-      hamburger_list.forEach(function(value){
+  $(`.hamburger`).on('click', function() {
+    if (ham_count == 0) {
+      $(`.hamburger span`).css('background', 'white');
+      hamburger_list.forEach(function(value) {
         $(`.${value}`).addClass(`${value}-after`);
       });
       ham_count += 1;
       console.log(ham_count);
-    }else{
-      $(`.hamburger span`).css('background','black');
-      hamburger_list.forEach(function(value){
+
+
+    } else {
+      $(`.hamburger span`).css('background', 'black');
+      hamburger_list.forEach(function(value) {
         $(`.${value}`).removeClass(`${value}-after`);
       });
       ham_count -= 1;
       console.log(ham_count);
+
     }
-
-
   });
+  
+  $(`.hamburger-top`).addClass('hamburger-top-anime');
+  $(`.hamburger-middle`).addClass('hamburger-middle-anime');
+  $(`.hamburger-bottom`).addClass('hamburger-bottom-anime');
+
+  setTimeout(function() {
+    $(`.hamburger-top`).removeClass('hamburger-top-anime');
+    $(`.hamburger-middle`).removeClass('hamburger-middle-anime');
+    $(`.hamburger-bottom`).removeClass('hamburger-bottom-anime');
+  }, 1300);
 
 });
