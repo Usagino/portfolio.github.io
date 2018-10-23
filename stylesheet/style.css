@@ -619,6 +619,8 @@ main .content-3 .wrap-works .works {
   header .headerwrap .desktop {
     display: none; }
   header .headerwrap .hamburger {
+    z-index: 10;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -627,21 +629,22 @@ main .content-3 .wrap-works .works {
     width: 30px;
     top: 0;
     bottom: 0;
-    left: 10px;
+    left: 0px;
     margin: auto; }
     header .headerwrap .hamburger span {
       height: 1px;
       width: 100%;
       background: #5c5c5c; }
   header .headerwrap .phone {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transition: all 300ms ease 0s;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
     display: block;
     top: 0;
     right: 0;
+    z-index: 20;
     background: #5c5c5c;
-    opacity: 0.6;
-    z-index: 20; }
+    opacity: 0.6; }
     header .headerwrap .phone ul {
       flex-direction: column;
       justify-content: center;

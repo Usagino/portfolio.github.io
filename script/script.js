@@ -95,6 +95,12 @@ $(function(){
       $(`.footer-wrap .contact_icon`).addClass('translateX_double');
     }
   })
-});
 
-console.log("1413");
+  // hamburger-menu
+  $(`.hamburger`).on('click',function(){
+     $(`.phone`).css('transform','translateX(0%)');
+     $(this).css('opacity',0);
+     console.log("押された");
+  });
+
+});
