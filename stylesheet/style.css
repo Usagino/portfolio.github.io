@@ -771,18 +771,18 @@ main .content-3 .wrap-works .works {
     display: none; }
   main .content-2 .main-sp {
     display: block; }
-  main .content-2 .wrap-self h1 {
-    top: inherit;
-    right: inherit;
-    left: 0;
-    bottom: 20%; }
-  main .content-2 .wrap-self img {
-    bottom: inherit;
-    width: 90%;
-    height: auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
-  main .content-2 .wrap-self .btn {
-    position: absolute;
-    z-index: 10;
-    right: 0;
-    bottom: 0; } }
+  main .content-2 .wrap-self {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end; }
+    main .content-2 .wrap-self h1 {
+      position: static; }
+    main .content-2 .wrap-self img {
+      position: static;
+      width: 90%;
+      height: auto;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
+    main .content-2 .wrap-self .btn {
+      position: static;
+      z-index: 10; } }

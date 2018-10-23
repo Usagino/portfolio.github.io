@@ -135,23 +135,23 @@
         display: block;
       }
       .wrap-self{
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        align-items: flex-end;
         h1{
-          top: inherit;
-          right: inherit;
-          left: 0;
-          bottom: 20%;
+          position: static;
         }
         img{
-          bottom: inherit;
+          position: static;
           width: 90%;
           height: auto;
           box-shadow: 0 2px 5px rgba(0,0,0,0.26)
         }
         .btn{
-          position: absolute;
+          position: static;
+
           z-index: 10;
-          right: 0;
-          bottom:0;
         }
       }
     }
