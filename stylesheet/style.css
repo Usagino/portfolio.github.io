@@ -759,6 +759,12 @@ main .content-3 .wrap-works .works {
   main .wrapper {
     width: 72%;
     height: 64%; }
+  main .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    z-index: 10; }
   main .content-1 .wrap-header h1 {
     display: none;
     font-size: 24px;
@@ -780,9 +786,36 @@ main .content-3 .wrap-works .works {
       position: static; }
     main .content-2 .wrap-self img {
       position: static;
-      width: 90%;
+      width: 80%;
       height: auto;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
     main .content-2 .wrap-self .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: static;
-      z-index: 10; } }
+      z-index: 10; }
+  main .content-3 img {
+    display: none; }
+  main .content-3 .wrap-works {
+    background: url(../material/polaroid.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; }
+    main .content-3 .wrap-works h1, main .content-3 .wrap-works .button_wrap {
+      position: static;
+      padding: 32px 0; }
+    main .content-3 .wrap-works .button_wrap {
+      width: 90%;
+      display: flex;
+      flex-direction: row; }
+      main .content-3 .wrap-works .button_wrap .btn {
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static; } }

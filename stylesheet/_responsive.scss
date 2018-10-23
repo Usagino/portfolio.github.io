@@ -110,6 +110,14 @@
       width: 72%;
       height: 64%;
     }
+    .btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: static;
+
+      z-index: 10;
+    }
     .content-1{
       .wrap-header {
         h1{
@@ -144,17 +152,54 @@
         }
         img{
           position: static;
-          width: 90%;
+          width: 80%;
           height: auto;
           box-shadow: 0 2px 5px rgba(0,0,0,0.26)
         }
         .btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
           position: static;
 
           z-index: 10;
         }
       }
     }
+    .content-3{
+      img{
+        display: none;
+      }
+      .wrap-works{
+        background: url(../material/polaroid.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        h1,.button_wrap{
+          position: static;
+          padding: 32px 0;
+        }
+        .button_wrap{
+          width: 90%;
+          display: flex;
+          flex-direction: row;
+          .btn{
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: static;
+          }
+        }
+
+      }
+
+    }
   }
+
 
 }
