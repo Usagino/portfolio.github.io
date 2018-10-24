@@ -813,7 +813,7 @@ main .content-3 .wrap-works .works {
     display: none !important; }
   footer .footer-wrap .wrap-contact {
     height: 88vh;
-    width: 88vw;
+    width: 72vw;
     grid-template-rows: 50% 50%;
     grid-template-columns: 1fr; }
     footer .footer-wrap .wrap-contact .contact_section {
