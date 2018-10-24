@@ -742,7 +742,7 @@ main .content-3 .wrap-works .works {
     display: none; }
   main .wrapper {
     width: 72%;
-    height: 64%; }
+    height: 72%; }
   main .btn {
     display: flex;
     justify-content: center;
@@ -770,7 +770,7 @@ main .content-3 .wrap-works .works {
       position: static; }
     main .content-2 .wrap-self img {
       position: static;
-      width: 80%;
+      width: 72%;
       height: auto;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
     main .content-2 .wrap-self .btn {
