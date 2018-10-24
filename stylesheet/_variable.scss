@@ -49,7 +49,7 @@ $box_all_desktop: 1000px;
   }
 }
 
-@mixin center{
+@mixin dispaly-center{
   display: flex;
   justify-content: center;
   align-items: center;

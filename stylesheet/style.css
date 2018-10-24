@@ -258,25 +258,6 @@ header [class*=" flex-"] {
     background: #5c5c5c;
     height: 1px; }
 
-header .hamburger-menu {
-  transition: all 600ms ease;
-  position: fixed;
-  right: 100%;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(1, 1, 1, 0.2);
-  content: "";
-  overflow: hidden; }
-  header .hamburger-menu_nav {
-    height: 100%;
-    width: 30vw;
-    background: #fafafa;
-    position: absolute;
-    right: -100%;
-    top: 0;
-    transition: all 700ms ease 400ms; }
-
 header .headerwrap .flex-pos {
   position: fixed;
   width: 40px;
@@ -437,6 +418,9 @@ footer .content-4 .contact_link {
   footer .content-4 .contact_link img {
     height: 16%;
     width: 16%; }
+
+footer .link-image {
+  display: none; }
 
 .wrapper {
   position: relative;
@@ -687,7 +671,7 @@ main .content-3 .wrap-works .works {
     width: 30px;
     top: 0;
     bottom: 0;
-    left: 0px;
+    left: 0;
     margin: auto; }
     header .headerwrap .hamburger span {
       height: 1px;
@@ -801,7 +785,7 @@ main .content-3 .wrap-works .works {
   main .content-3 img {
     display: none; }
   main .content-3 .wrap-works {
-    background: url(../material/polaroid.jpg);
+    background: url("../material/polaroid.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -809,7 +793,8 @@ main .content-3 .wrap-works .works {
     justify-content: space-between;
     align-items: center;
     flex-direction: column; }
-    main .content-3 .wrap-works h1, main .content-3 .wrap-works .button_wrap {
+    main .content-3 .wrap-works .button_wrap,
+    main .content-3 .wrap-works h1 {
       position: static;
       padding: 32px 0; }
     main .content-3 .wrap-works h1 {
@@ -827,7 +812,54 @@ main .content-3 .wrap-works .works {
   footer .footer-wrap .contact_icon_imgwrap {
     display: none !important; }
   footer .footer-wrap .wrap-contact {
-    height: 100vh;
-    width: 100vw;
+    height: 88vh;
+    width: 88vw;
     grid-template-rows: 50% 50%;
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+    footer .footer-wrap .wrap-contact .contact_section {
+      order: 2; }
+    footer .footer-wrap .wrap-contact .contact_sns {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%; }
+      footer .footer-wrap .wrap-contact .contact_sns li {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        footer .footer-wrap .wrap-contact .contact_sns li a {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        footer .footer-wrap .wrap-contact .contact_sns li .link-text {
+          display: none; }
+        footer .footer-wrap .wrap-contact .contact_sns li .link-image {
+          display: inherit;
+          height: auto;
+          width: 30%; }
+      footer .footer-wrap .wrap-contact .contact_sns .link_twitter {
+        background: #55acee; }
+      footer .footer-wrap .wrap-contact .contact_sns .link_instagram {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+      footer .footer-wrap .wrap-contact .contact_sns .link_wantedly {
+        background: #21bddb; }
+    footer .footer-wrap .wrap-contact .contact_icon, footer .footer-wrap .wrap-contact .contact_section {
+      background: transparent; }
+  footer .translateX {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-animation: contact_anime 800ms ease 1000ms forwards;
+            animation: contact_anime 800ms ease 1000ms forwards; }
+  footer .translateX_double {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-animation: contact_anime 800ms ease 800ms forwards;
+            animation: contact_anime 800ms ease 800ms forwards; } }

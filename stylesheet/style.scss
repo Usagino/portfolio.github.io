@@ -45,27 +45,7 @@ header {
     }
   }
 
-  .hamburger-menu{
-    transition: all 600ms ease;
-    position: fixed;
-    right: 100%;
-    z-index: 100;
-    width: 100vw;
-    height:100vh;
-    background: rgba(#010101, 0.2);
 
-    content: "";
-    overflow: hidden;
-    &_nav{
-      height:100%;
-      width: 30vw;
-      background: #fafafa;
-      position: absolute;
-      right: -100%;
-      top: 0;
-      transition: all 700ms ease 400ms;
-    }
-  }
   .headerwrap {
     .flex-pos {
       position: fixed;
@@ -166,6 +146,7 @@ header {
   }
 }
 footer {
+
   ul{
     height: 64%;width: auto;
     display: flex;
@@ -200,7 +181,7 @@ footer {
       transform: translateX(-200%);
       background: rgb(240, 240, 240);
       overflow: hidden;
-      @include center;
+      @include dispaly-center;
       position: relative;
       top: 0;left: 0;
       .contact_icon_imgwrap{
@@ -208,7 +189,7 @@ footer {
         height: 100%;width: 100%;
         z-index: 2;
         transition: all 500ms ease  200ms;
-        @include center;
+        @include dispaly-center;
       }
       &_twitter{
         background: #1da1f2;
@@ -239,12 +220,16 @@ footer {
     .contact_link{
       background: rgb(232, 232, 232);
 
-      @include center;
+      @include dispaly-center;
       img{
         height: 16%;
         width: 16%;
       }
     }
+
+  }
+  .link-image{
+    display: none;
   }
 }
 
