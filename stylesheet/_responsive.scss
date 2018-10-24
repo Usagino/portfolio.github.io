@@ -204,5 +204,23 @@
         }
       }
     }
+
+
+  }
+  footer{
+
+    .footer-wrap{
+      .contact_icon{
+        &_imgwrap{
+          display: none !important;
+        }
+
+      }
+      .wrap-contact{
+        height: 100vh;width: 100vw;
+        grid-template-rows:50% 50%;
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }
