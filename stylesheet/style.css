@@ -818,6 +818,10 @@ main .content-3 .wrap-works .works {
     grid-template-columns: 1fr; }
     footer .footer-wrap .wrap-contact .contact_section {
       order: 2; }
+    footer .footer-wrap .wrap-contact .contact_icon li {
+      padding: 0px; }
+    footer .footer-wrap .wrap-contact .contact_mails {
+      justify-content: space-around; }
     footer .footer-wrap .wrap-contact .contact_sns {
       display: grid;
       grid-template-rows: 1fr 1fr;

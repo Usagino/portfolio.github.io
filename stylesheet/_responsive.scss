@@ -243,8 +243,15 @@
         .contact_section{
           order: 2;
         }
+        .contact_icon{
+          li{
+            padding: 0px;
+          }
+        }
+        .contact_mails{
+          justify-content: space-around;
+        }
         .contact_sns {
-
           display: grid;
           grid-template-rows: 1fr 1fr;
           grid-template-columns: 1fr 1fr;
