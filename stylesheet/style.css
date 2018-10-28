@@ -764,13 +764,16 @@ main .content-3 .wrap-works .works {
   main .content-2 .wrap-self {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end; }
+    justify-content: center;
+    align-items: center; }
+    main .content-2 .wrap-self > * {
+      margin: 16px 0 !important; }
     main .content-2 .wrap-self h1 {
+      width: 91%;
       position: static; }
     main .content-2 .wrap-self img {
       position: static;
-      width: 72%;
+      width: 91%;
       height: auto;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
     main .content-2 .wrap-self .btn {
@@ -785,16 +788,17 @@ main .content-3 .wrap-works .works {
   main .content-3 img {
     display: none; }
   main .content-3 .wrap-works {
+    height: 100%;
+    width: 100%;
     background: url("../material/polaroid.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column; }
-    main .content-3 .wrap-works .button_wrap,
-    main .content-3 .wrap-works h1 {
+    main .content-3 .wrap-works .button_wrap, main .content-3 .wrap-works h1 {
       position: static;
       padding: 32px 0; }
     main .content-3 .wrap-works h1 {
@@ -814,7 +818,7 @@ main .content-3 .wrap-works .works {
   footer .footer-wrap .wrap-contact {
     height: 88vh;
     width: 72vw;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: calc(88vh - 72vw) calc(88vh - 72vw);
     grid-template-columns: 1fr; }
     footer .footer-wrap .wrap-contact .contact_section {
       order: 2; }
@@ -824,8 +828,8 @@ main .content-3 .wrap-works .works {
       justify-content: space-around; }
     footer .footer-wrap .wrap-contact .contact_sns {
       display: grid;
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 36vw 36vw;
+      grid-template-columns: 36vw 36vw;
       justify-content: center;
       align-items: center;
       height: 100%;
@@ -838,32 +842,23 @@ main .content-3 .wrap-works .works {
         justify-content: center;
         align-items: center; }
         footer .footer-wrap .wrap-contact .contact_sns li a {
-          height: 100%;
-          width: 100%;
+          height: 112px;
+          width: 112px;
           display: flex;
           justify-content: center;
-          align-items: center; }
+          align-items: center;
+          opacity: 0.9; }
         footer .footer-wrap .wrap-contact .contact_sns li .link-text {
           display: none; }
         footer .footer-wrap .wrap-contact .contact_sns li .link-image {
           display: inherit;
           height: auto;
           width: 30%; }
-      footer .footer-wrap .wrap-contact .contact_sns .link_twitter {
-        background: #55acee; }
-      footer .footer-wrap .wrap-contact .contact_sns .link_instagram {
-        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-      footer .footer-wrap .wrap-contact .contact_sns .link_wantedly {
-        background: #21bddb; }
     footer .footer-wrap .wrap-contact .contact_icon, footer .footer-wrap .wrap-contact .contact_section {
       background: transparent; }
   footer .translateX {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-animation: contact_anime 800ms ease 1000ms forwards;
-            animation: contact_anime 800ms ease 1000ms forwards; }
+    -webkit-animation: contact_anime 800ms ease 100ms forwards;
+            animation: contact_anime 800ms ease 100ms forwards; }
   footer .translateX_double {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-animation: contact_anime 800ms ease 800ms forwards;
-            animation: contact_anime 800ms ease 800ms forwards; } }
+    -webkit-animation: contact_anime 800ms ease 300ms forwards;
+            animation: contact_anime 800ms ease 300ms forwards; } }

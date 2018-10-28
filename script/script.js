@@ -15,6 +15,7 @@ $(function() {
       e.preventDefault();
     });
   }
+  
 
   //スクロール復活用関数
   function return_scroll() {
