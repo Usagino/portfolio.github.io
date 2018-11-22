@@ -1,0 +1,22 @@
+html(lang="ja")
+  head
+    include includes/_head.pug
+  body
+    header
+      include includes/_header.pug
+    main
+      div#article
+        div.thumbnail(style="background-image:url('material/mockup.svg')")
+          span.thumbnail-mask
+          h1.thumbnail-title.rellax(data-rellax-speed="2")
+            | ARCHITECTURE-ANOMALIES <br> MAKE <br> WEBSITE
+          div.scroll.rellax(data-rellax-speed="4")
+            span.scroll-bar.scroll-bar1
+            span.scroll-bar.scroll-bar2
+          
+          
+      
+    footer
+      include includes/_footer.pug
+      
+  include includes/_script.pug

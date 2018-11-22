@@ -2,11 +2,11 @@ $(function() {
   function no_scroll() {
     console.log("no_scroll");
     //PC用
-    var scroll_event = 'onwheel' in document
-      ? 'wheel'
-      : 'onmousewheel' in document
-        ? 'mousewheel'
-        : 'DOMMouseScroll';
+    var scroll_event = 'onwheel' in document ?
+      'wheel' :
+      'onmousewheel' in document ?
+      'mousewheel' :
+      'DOMMouseScroll';
     $(document).on(scroll_event, function(e) {
       e.preventDefault();
     });
@@ -15,17 +15,17 @@ $(function() {
       e.preventDefault();
     });
   }
-  
+
 
   //スクロール復活用関数
   function return_scroll() {
     console.log("return_scroll");
     //PC用
-    var scroll_event = 'onwheel' in document
-      ? 'wheel'
-      : 'onmousewheel' in document
-        ? 'mousewheel'
-        : 'DOMMouseScroll';
+    var scroll_event = 'onwheel' in document ?
+      'wheel' :
+      'onmousewheel' in document ?
+      'mousewheel' :
+      'DOMMouseScroll';
     $(document).off(scroll_event);
     //SP用
     $(document).off('.noScroll');
@@ -38,15 +38,10 @@ $(function() {
   let floor_length = bar_length / window_height
   console.log(`このサイトは${bar_length}`);
   console.log(`${floor_length}階建てです`);
-  for (let i = 0; i < floor_length; i++) {
-    $(`.flex-pos`).append('<div class="pos"><span></span></div>');
-  }
 
   let half = $(window).height() / 2;
 
-  let flex_length = $(".flex-pos div").length
 
-  $.scrollify({section: ".contents"});
 
   $(`.flex-ham`).click(function(event) {
     $(`.hamburger-menu`).css('right', '0%');
@@ -61,51 +56,6 @@ $(function() {
     content_pos,
     pos;
 
-  for (let i = 1; i <= flex_length; i++) {
-    content_pos = $(`.content-${i}`).offset().top;
-    pos_list.push(content_pos - half);
-    console.log(`content-${i} の高さは${content_pos}`);
-  }
-
-  for (let i = 1; i <= flex_length; i++) {
-    if (pos_list[i] >= pos) {
-      console.log(`Hello-${i}`);
-    }
-  }
-
-  const pos_anime = () => {
-    pos = $(window).scrollTop() + 1;
-    for (let i = 0; i <= flex_length; i++) {
-      if (pos_list[i] <= pos && !(pos_list[i + 1] <= pos)) {
-        $(`.flex-pos div:nth-child(${i + 1})`).addClass('double').css('opacity', 1);
-      } else {
-        $(`.flex-pos div:nth-child(${i + 1})`).removeClass('double').css('opacity', 0.1);
-      }
-    }
-  }
-  const scroll_anime = () => {
-    if (pos_list[1] <= pos) {
-      $(`.content-2 h1`).addClass(`move_left`);
-      $(`.content-2 img`).addClass(`move_bottom`);
-      $(`.content-2 a`).addClass(`move_left`);
-    }
-    if (pos_list[2] <= pos) {
-      $(`.content-3 h1`).addClass(`move_right`);
-      $(`.content-3 img`).addClass(`move_top`);
-      $(`.content-3 a`).addClass(`move_right`);
-    }
-
-  }
-
-  pos_anime();
-  scroll_anime();
-
-  $(window).scroll(function(event) {
-    pos = $(window).scrollTop() + 1;
-    pos_anime();
-    scroll_anime();
-  });
-
   let link_array = ['twitter', 'instagram', 'wantedly'];
   for (let icon of link_array) {
     $(`.contact_sns .link_${icon}`).hover(function() {
@@ -115,16 +65,6 @@ $(function() {
     });
   }
 
-  // 下から数えて何pxかを算出し、footerを表示する
-  let h = $(window).height();
-  $(window).scroll(function() {
-    let bottom_pos = bar_length - pos - h + 1;
-
-    if (bottom_pos <= h / 2) {
-      $(`.footer-wrap .contact_section`).addClass('translateX');
-      $(`.footer-wrap .contact_icon`).addClass('translateX_double');
-    }
-  })
 
   // hamburger-menuのインタラクション
   let hamburger_list = ["phone", "hamburger-top", "hamburger-middle", "hamburger-bottom"];
@@ -139,8 +79,6 @@ $(function() {
       });
       ham_count += 1;
       console.log(ham_count);
-
-
     } else {
       $(`.hamburger span`).css('background', 'black');
       hamburger_list.forEach(function(value) {
@@ -152,14 +90,70 @@ $(function() {
     }
   });
 
-  $(`.hamburger-top`).addClass('hamburger-top-anime');
-  $(`.hamburger-middle`).addClass('hamburger-middle-anime');
-  $(`.hamburger-bottom`).addClass('hamburger-bottom-anime');
+  let circlebar_draw = () =>{
+    // 円の座標を取得してcircle_posオブジェクトに渡している
+    let circle_pos = {},
+      pos_top = 0,
+      pos_left = 0,
+      count =0;
+    let pos_array = [`.circle-header`,`.wrap-self_text`,`.wrap-works_text`];
 
-  setTimeout(function() {
-    $(`.hamburger-top`).removeClass('hamburger-top-anime');
-    $(`.hamburger-middle`).removeClass('hamburger-middle-anime');
-    $(`.hamburger-bottom`).removeClass('hamburger-bottom-anime');
-  }, 1400);
+    pos_array.forEach(function(class_name) {
+      pos_top = $(class_name).offset().top + ($(class_name).height() / 2 );
+      pos_left = $(class_name).offset().left + ($(class_name).width() / 2 );
+      circle_pos[`${count}_Y`] = pos_top;
+      circle_pos[`${count}_X`] = pos_left;
+      count++;
+    });
+    console.log(circle_pos);
+
+    // circle_posオブジェクトの中にある２つの座標間の距離を計測
+    let header_dist = Math.sqrt(
+      Math.pow( circle_pos[`0_Y`] - circle_pos[`1_Y`] , 2 ) +
+      Math.pow( circle_pos[`0_X`] -circle_pos[`1_X`] , 2 )
+    );
+    $(".circle-header_bar,.circle-header_bar_wrap-color").css('width', `${header_dist}px`);
+//
+    let self_dist = Math.sqrt(
+      Math.pow( circle_pos[`1_Y`] - circle_pos[`2_Y`] , 2 ) +
+      Math.pow( circle_pos[`1_X`] -circle_pos[`2_X`] , 2 )
+    );
+    $(".circle-self_bar").css('width',`${self_dist}px`);
+//
+    let header_deg = Math.atan2(
+      circle_pos[`1_Y`] - circle_pos[`0_Y`],
+      circle_pos[`1_X`] -circle_pos[`0_X`]
+    ) ;
+    $(".circle-header_bar").css('transform', `rotate(${header_deg}rad)`);
+//
+    let self_deg = Math.atan2(
+      circle_pos[`2_Y`] - circle_pos[`1_Y`],
+      circle_pos[`2_X`] -circle_pos[`1_X`]
+    ) ;
+    $(".circle-self_bar").css('transform',`rotate(${self_deg}rad)`);
+
+  }
+  circlebar_draw();
+
+  window.onresize = function () {
+    circlebar_draw();
+  };
+
+
+  // 下から数えて何pxかを算出し、footerを表示する
+  // getScrollBottom()は下からのスクロール量を算出する関数
+  function getScrollBottom() {
+    var body = window.document.body;
+    var html = window.document.documentElement;
+    var scrollTop = body.scrollTop || html.scrollTop;
+    return html.scrollHeight - html.clientHeight - scrollTop;
+  }
+
+  $(window).scroll(function() {
+    if (getScrollBottom() <= 240) {
+      $(`.footer-wrap .contact_section`).addClass('translateX');
+      $(`.footer-wrap .contact_icon`).addClass('translateX_double');
+    }
+  });
 
 });

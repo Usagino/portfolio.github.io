@@ -133,40 +133,40 @@
       z-index: 10;
     }
 
-    .content-1 {
-      .wrap-header {
-        h1 {
-          display: none;
-          font-size: 24px;
-          left: auto;
-        }
+    .wrap-header {
+      h1 {
+        display: none;
+        font-size: 24px;
+        left: auto;
+      }
 
-        img {
-          width: 240px;
-          left: 0;
-          bottom: 40px;
-        }
+      img {
+        width: 240px;
+        left: 0;
+        bottom: 40px;
       }
     }
 
-    .content-2 {
-      .main-pc {
+    .wrap-self {
+      &_image-pc {
         display: none;
       }
 
-      .main-sp {
+      &_image-pc {
         display: block;
       }
 
       .wrap-self {
-        $wrap-self-width:91%;
+        $wrap-self-width: 91%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        & > *{
+
+        & > * {
           margin: 16px 0 !important;
         }
+
         h1 {
           width: $wrap-self-width;
           position: static;
@@ -180,22 +180,26 @@
         }
 
         .btn {
-          @include dispaly-center
-          position: static;
+          min-height: 30px;
+          @include dispaly-center position: static;
           z-index: 10;
         }
       }
     }
+
     .content-3 {
       .wrapper {
         width: 100%;
         height: 72%;
       }
+
       img {
         display: none;
       }
+
       .wrap-works {
-        height: 100%;width: 100%;
+        height: 100%;
+        width: 100%;
         background: url("../material/polaroid.jpg");
         background-position: center;
         background-repeat: no-repeat;
@@ -204,7 +208,9 @@
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
-        .button_wrap,h1 {
+
+        .button_wrap,
+        h1 {
           position: static;
           padding: 32px 0;
         }
@@ -220,8 +226,7 @@
 
           .btn {
             margin: 10px;
-            @include dispaly-center
-            position: static;
+            @include dispaly-center position: static;
           }
         }
       }
@@ -235,22 +240,27 @@
           display: none !important;
         }
       }
+
       .wrap-contact {
         height: 88vh;
         width: 72vw;
         grid-template-rows: calc(88vh - 72vw) calc(88vh - 72vw);
         grid-template-columns: 1fr;
-        .contact_section{
+
+        .contact_section {
           order: 2;
         }
-        .contact_icon{
-          li{
-            padding: 0px;
+
+        .contact_icon {
+          li {
+            padding: 0;
           }
         }
-        .contact_mails{
+
+        .contact_mails {
           justify-content: space-around;
         }
+
         .contact_sns {
           display: grid;
           grid-template-rows: 36vw 36vw;
@@ -259,22 +269,26 @@
           align-items: center;
           height: 100%;
           width: 100%;
+
           li {
             height: 100%;
             width: 100%;
             padding: 0;
             @include dispaly-center;
-            a{
+
+            a {
               height: 112px;
               width: 112px;
               @include dispaly-center;
               opacity: 0.9;
             }
-            .link{
-              &-text{
+
+            .link {
+              &-text {
                 display: none;
               }
-              &-image{
+
+              &-image {
                 display: inherit;
                 height: auto;
                 width: 30%;
@@ -282,18 +296,21 @@
             }
           }
         }
-        .contact{
-          &_icon,&_section{
+
+        .contact {
+          &_icon,
+          &_section {
             background: transparent;
           }
         }
-
       }
     }
-    .translateX{
+
+    .translateX {
       animation: contact_anime 800ms ease 100ms forwards;
     }
-    .translateX_double{
+
+    .translateX_double {
       animation: contact_anime 800ms ease 300ms forwards;
     }
   }

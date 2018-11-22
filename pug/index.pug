@@ -12,9 +12,12 @@ html(lang="ja")
         span.circle-res.res-2
         
       #index
-        .content-1.contents
+        .contents
           .wrap-header.wrapper
-            .circle
+            .circle.circle-header
+              div.circle-header_bar
+                div.circle-header_bar_wrap
+                  span.circle-header_bar_wrap-color
               span.circle_header1.circle_size
               span.circle_header2.circle_size
                 
@@ -24,41 +27,51 @@ html(lang="ja")
               | Front-Art Graph
             img.logo(src="material/my_logo.svg" alt="")
               
-        .content-2.contents
+        .contents
           .wrap-self.wrapper
-            .circle
-              span.circle_3
-              span.circle_4
-            img.main-pc(src="material/main.png" alt="")
-            img.main-sp(src="material/main_sp.png" alt="")
-            h1
-              | Who is
-              br
-              |  Yuki Itoh?
             
-            a.btn(href="")
-              span.bg
-              span.text show me more
+            .wrap-self_text
+              .circle.circle-self
+                div.circle-self_bar
+                  span.circle-self_bar-color
+                span.circle_3
+                span.circle_4
+              h1
+                | Who is
+                br
+                |  Yuki Itoh?
               
-        .content-3.contents
+              a.btn(href="")
+                span.bg
+                span.text show me more
+            .wrap-self_image
+              img.wrap-self_image-pc(src="material/main.png" alt="")
+              img.wrap-self_image-sp(src="material/main_sp.png" alt="")
+              
+        .contents
           .wrap-works.wrapper
-            .circle
-              span.circle_5
-              span.circle_6
-                
-            h1
-              | His works 
-              br
-              | and photos
-            img(src="material/polaroid.jpg" alt="")
-            .button_wrap
+            
+            .wrap-works_image
+              img(src="material/polaroid.jpg" alt="")
+            .wrap-works_text
+              .circle.circle-works
+                span.circle_5
+                span.circle_6
+              h1
+                | His works 
+                br
+                | and photos
               a.btn(href="")
                 span.bg
-                span.text Photos
-              a.btn(href="")
-                span.bg
-                span.text works
+                span.text
+                  | Photos & works
+            
+            
+              
     footer
       include includes/_footer.pug
+    
+      
   
   include includes/_script.pug
+  //-   script(src="https://cdn.jsdelivr.net/npm/jquery-scrollify@1/jquery.scrollify.min.js")
