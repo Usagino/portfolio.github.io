@@ -5,18 +5,32 @@ html(lang="ja")
     header
       include includes/_header.pug
     main
-      div#article
-        div.thumbnail(style="background-image:url('material/mockup.svg')")
-          span.thumbnail-mask
-          h1.thumbnail-title.rellax(data-rellax-speed="2")
-            | ARCHITECTURE-ANOMALIES <br> MAKE <br> WEBSITE
-          div.scroll.rellax(data-rellax-speed="4")
-            span.scroll-bar.scroll-bar1
-            span.scroll-bar.scroll-bar2
-          
-          
-      
+      #article
+        .circle
+          span.circle-A
+          span.circle-B
+        .news
+          .news_body
+            .news_body_sentence
+              .news_body_sentence_titlebox
+                h1 ARCHITECTURE-ANOMALIES MAKE WEBSITE
+                p
+                  time 2018.8.2
+                p
+                  a works
+                p
+                  img(src="material/mockup.png")
+              .news_body_sentence_textbox
+
+                
+                p 学校の課題でつくったwebサイトです。javascriptを扱う授業の課題で「javascriptを使ってインタラクションを必ず二個以上扱う」「夏をテーマにしたサイト」というルールだったので、夏に雲がきれいに見える場所を紹介するサイトを作成しました。
+                p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
+                h1 デザインラフ
+                hr
+                p
+                  img(src="http://front-artgraph.com/wp-content/uploads/2018/07/HZEDE4064-e1532587780673.jpg")
+                    
     footer
       include includes/_footer.pug
       
-  include includes/_script.pug
+    include includes/_script.pug

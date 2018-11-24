@@ -133,11 +133,13 @@ $(function() {
     $(".circle-self_bar").css('transform',`rotate(${self_deg}rad)`);
 
   }
-  circlebar_draw();
-
-  window.onresize = function () {
+  if ($('div').hasClass('circle-index')) {
     circlebar_draw();
-  };
+
+    window.onresize = function () {
+      circlebar_draw();
+    };
+  }
 
 
   // 下から数えて何pxかを算出し、footerを表示する
@@ -155,5 +157,18 @@ $(function() {
       $(`.footer-wrap .contact_icon`).addClass('translateX_double');
     }
   });
+  // マウスカーソルのアニメーション
+
+  window.onload=function(){
+    //マウス移動時のイベントをBODYタグに登録する
+    document.body.addEventListener("mousemove", function(e){
+      //座標を取得する
+      let mX = e.pageX;  //X座標
+      let mY = e.pageY;  //Y座標
+      //座標を表示する
+
+
+    });
+  }
 
 });
