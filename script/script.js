@@ -155,6 +155,7 @@ $(function() {
     if (getScrollBottom() <= 240) {
       $(`.footer-wrap .contact_section`).addClass('translateX');
       $(`.footer-wrap .contact_icon`).addClass('translateX_double');
+      console.log("footer");
     }
   });
   // マウスカーソルのアニメーション
@@ -166,9 +167,8 @@ $(function() {
       let mX = e.pageX;  //X座標
       let mY = e.pageY;  //Y座標
       //座標を表示する
-
-
     });
   }
+
 
 });

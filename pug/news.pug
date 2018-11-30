@@ -1,0 +1,52 @@
+html(lang="ja")
+  head
+    include includes/_head.pug
+  body
+    header
+      include includes/_header.pug
+    main
+      #news
+        include includes/_circle.pug
+        .section
+          .section_wrap
+            h1.section_wrap-title Photos and works
+            h2.section_wrap-text Pictures taken with a Polaroid camera and individual and school issues are posted
+        .wrap
+          
+          mixin news
+            a(class="wrap-contents")
+              img(class=".wrap-contents_image" src="material/mockup.png")
+              .wrap-contents_card
+                h2 ARCHITECTURE-ANOMALIES REMAKE WEBSITE
+                p ARCHITECTURE-ANOMALIES　is remake website
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          +news
+          
+          
+
+    footer
+      include includes/_footer.pug
+      
+  include includes/_script.pug

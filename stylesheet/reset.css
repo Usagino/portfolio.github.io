@@ -29,11 +29,12 @@ table {
   border-spacing: 0;
 }
 
-ul, ol {
+ul, ol, li {
   list-style: none;
 }
 
 a {
+  cursor: pointer;
   display: block;
   text-decoration: none;
 }

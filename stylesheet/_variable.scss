@@ -7,6 +7,7 @@ $youtube: #cd201f;
 $wantedly:#21bddb;
 $hover_color: #6e6e6e;
 $link_color: $black;
+$special_color:rgba(#cf0125, 0.65);
 
 $box_all_smartphone: 420px;
 $box_all_tablet: 600px;
@@ -60,7 +61,6 @@ $box_all_desktop: 1000px;
   margin: auto;
 }
 @mixin btn-anime($bg_color){
-
   .btn{
     font-weight: 800;
     width: 160px;
@@ -109,12 +109,10 @@ html {
   overflow-x: hidden;
 }
 $scale: scaleX(2);
-
 div,
 span {
   content: "";
 }
-
 img {
   pointer-events: none;
 }
@@ -134,6 +132,37 @@ p {
 h1 {
   font-size: 48px;
 }
-
+@mixin public_circle{
+  .circle{
+    width: 200px;height: 200px;
+    position: fixed;
+    z-index: -999;
+    top: 0;left: 0;
+    right: 0;bottom: 0;
+    margin: auto;
+    .circle-A{
+      width: 100%;height: 100%;
+      border-radius: 40% 40% 50% 40%/30% 50% 50%;
+      background: #ffe5e4;
+      animation: rotate 8s linear 0s infinite normal;
+    }
+    .circle-B{
+      background: white;
+      width: 80%;height: 80%;
+      border-radius: 40% 60% 50% 40%/30% 50% 50%;
+      animation: rotate 5s linear 0s infinite normal;
+    }
+  }
+}
+@mixin text_line{
+  text-align: justify;
+  -webkit-font-feature-settings : "palt";
+  font-feature-settings : "palt";
+}
+@mixin sticky($top){
+  position: -webkit-sticky;
+  position: sticky;
+  top:$top;
+}
 $smartphone: "only screen and (min-width : 320px) and (max-width : 480px)";
 $tablet: "only screen (min-width : 480px) and (max-width : 1024px)";

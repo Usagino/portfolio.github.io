@@ -1,0 +1,38 @@
+html(lang="ja")
+  head
+    include includes/_head.pug
+  body
+    header
+      include includes/_header.pug
+    main
+      #about
+        include includes/_circle.pug
+        .name
+          h1.name-text YUKI ITOH
+        .introduction
+          .introduction_skill
+            ul.introduction_skill-list
+              li.introduction_skill-list-title Engineer skill
+              li HTML / CSS
+              li Pug / SASS
+              li JavaScript
+              li React / Vue
+              li.introduction_skill-list-title Designer skill
+              li Adobe IllustratorCC
+              li Adobe PhotoshopCC
+              li AftereffectCC
+              li Adobe XD
+              li FramerX
+            
+          .introduction_bio
+            ui.introduction_bio-list
+              li: <span>1998</span> BORN IN YAMAGATA,JAPAN
+              li: <span>2017</span> ENTER A NIPPON ENGINEERING COLLEGE
+              li: <span>2017</span> LITALICO inc intern
+              li: <span>2018</span> Progate inc intern
+          .introduction_text
+            section.introduction_text-contact_section
+            | <span>伊藤ゆうき</span><br>山形県生まれ工業高校育ち、東京在住。17歳くらいに田舎で一生を終えるなんて嫌だと思い、思い切って東京に上京するもいまだに方言が抜けない。上京して最初に目標にしたことはスターバックスで働くこと、しかし寮の門限が23時ということもあってかそれを理由に選考を落とされ、面接回数は11回にも及ぶ。<br>高校の時にプログラミングにであい、以降はUdemyやProgateでプログラミングを勉強している。進路を決めるさいに、「どこでも自由にできる仕事」を目標にカフェでMacBookを開きエンターキーをターン!って打ってる大人に憧れる。プログラミングは好きだがエンジニアリングできるほどの知識もないしデザインが好きだったのでデザイン系の専門学校に進学し、LITALICOやProgateでインターンをしている。
+    footer
+      include includes/_footer.pug
+  include includes/_script.pug

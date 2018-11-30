@@ -6,9 +6,7 @@ html(lang="ja")
       include includes/_header.pug
     main
       #article
-        .circle
-          span.circle-A
-          span.circle-B
+        include includes/_circle.pug
         .news
           .news_body
             .news_body_sentence
@@ -21,16 +19,30 @@ html(lang="ja")
                 p
                   img(src="material/mockup.png")
               .news_body_sentence_textbox
-
                 
-                p 学校の課題でつくったwebサイトです。javascriptを扱う授業の課題で「javascriptを使ってインタラクションを必ず二個以上扱う」「夏をテーマにしたサイト」というルールだったので、夏に雲がきれいに見える場所を紹介するサイトを作成しました。
-                p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
-                h1 デザインラフ
-                hr
-                p
-                  img(src="http://front-artgraph.com/wp-content/uploads/2018/07/HZEDE4064-e1532587780673.jpg")
-                    
+                
+                  h1 デザインラフ
+                  p lorem
+                  p 学校の課題でつくったwebサイトです。javascriptを扱う授業の課題で「javascriptを使ってインタラクションを必ず二個以上扱う」「夏をテーマにしたサイト」というルールだったので、夏に雲がきれいに見える場所を紹介するサイトを作成しました。
+                  p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
+                  p: img(src="http://front-artgraph.com/wp-content/uploads/2018/07/HZEDE4064-e1532587780673.jpg")
+
+                  p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
+                  p 学校の課題でつくったwebサイトです。javascriptを扱う授業の課題で「javascriptを使ってインタラクションを必ず二個以上扱う」「夏をテーマにしたサイト」というルールだったので、夏に雲がきれいに見える場所を紹介するサイトを作成しました。
+                  p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
+                  p 学校の課題でつくったwebサイトです。javascriptを扱う授業の課題で「javascriptを使ってインタラクションを必ず二個以上扱う」「夏をテーマにしたサイト」というルールだったので、夏に雲がきれいに見える場所を紹介するサイトを作成しました。
+                  p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
+                  p 学校の課題でつくったwebサイトです。javascriptを扱う授業の課題で「javascriptを使ってインタラクションを必ず二個以上扱う」「夏をテーマにしたサイト」というルールだったので、夏に雲がきれいに見える場所を紹介するサイトを作成しました。
+                  p 授業でやったことだけではあまりjQueryを理解できなかったのでProgateや参考書を片手に今回の課題を作成しました。作成にはおよそ５時間ほどかかりました。
+
+            .news_body_button
+              a.news_body_button-prev
+                p.news_body_button-prev-text PREV
+                span.news_body_button-prev-span
+              a.news_body_button-next
+                p.news_body_button-next-text NEXT
+                span.news_body_button-next-span
+
     footer
       include includes/_footer.pug
-      
     include includes/_script.pug

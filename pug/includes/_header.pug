@@ -1,27 +1,19 @@
 mixin menu
   ul
-    li
-      a(href="#") ABOUT
+    li: a(href="index.html") Top page
       span
-    li
-      a(href="#") WORKS
+    li.header_menu_twitter: a(href="#") Twitter
       span
-    li
-      a(href="#") PHOTOS
+    li.header_menu_instagram: a(href="#") Instagram
       span
-    li.header_menu_twitter
-      a(href="#") TWITTER
+    li.header_menu_wantedly: a(href="#") Wantedly
       span
-    li.header_menu_instagram
-      a(href="#") INSTAGRAM
+    li: a(href="about.html") Show me more
       span
-    li.header_menu_wantedly
-      a(href="#") WANTEDLY
+    li: a(href="news.html") Photos & works
       span
         
 .headerwrap
-  //- .flex-pos
-  //-   // js add bar
 
   nav.header_menu.desktop
     +menu
@@ -31,8 +23,3 @@ mixin menu
     span.hamburger-bottom
   nav.header_menu.phone
     +menu
-//
-  <div class="hamburger-menu">
-  <div class="hamburger-menu_nav">
-  </div>
-  </div>
